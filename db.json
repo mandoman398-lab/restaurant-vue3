@@ -1,0 +1,138 @@
+{
+  "users": [
+    {
+      "id": "d1f4",
+      "email": "issamelgamal4583@gmail.com",
+      "name": "issam",
+      "password": "iss@123"
+    },
+    {
+      "id": "b769",
+      "email": "mohamed165@gmail.com",
+      "password": "ads165",
+      "name": "mohamed"
+    },
+    {
+      "id": "1179",
+      "email": "ali31@gmail.com",
+      "password": "dasd",
+      "name": "ali"
+    },
+    {
+      "id": "aab3",
+      "email": "john@gmail.com",
+      "password": "2010",
+      "name": "john"
+    },
+    {
+      "id": "459c",
+      "email": "",
+      "password": "",
+      "name": ""
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "توتا",
+      "contact": "01066129221",
+      "address": "القومية شارع المشير احمد اسماعيل",
+      "id": "1"
+    },
+    {
+      "name": "shawrma elreem",
+      "contact": "01225315151",
+      "address": "Kawmea zagazig",
+      "id": "2"
+    },
+    {
+      "name": "nour elsham",
+      "contact": "05502335332",
+      "address": "kawmea zagazig",
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "name": "طأطأ",
+      "contact": "01022227797",
+      "address": "القوميه شارع المشير احمد اسماعيل"
+    },
+    {
+      "id": "5",
+      "name": "الدمياطي",
+      "contact": "0552307441",
+      "address": "القوميه جنب طأطأ"
+    },
+    {
+      "id": "6",
+      "name": "كاسب",
+      "contact": "01226661753",
+      "address": "شارع فاروق"
+    },
+    {
+      "id": "7",
+      "name": "ماكسيم",
+      "contact": "0552353070",
+      "address": "الفوميه "
+    },
+    {
+      "id": "8",
+      "name": "فتتفت",
+      "contact": "0552324311",
+      "address": "شارع مولد النبي وسط البلد"
+    },
+    {
+      "id": "9",
+      "name": "السرايا",
+      "contact": "01210677771",
+      "address": "الفلل"
+    },
+    {
+      "id": "10",
+      "name": "اوكس برجر OX",
+      "contact": "15761",
+      "address": "القوميه"
+    },
+    {
+      "id": "11",
+      "name": "بازوكا",
+      "contact": "16455",
+      "address": "القوميه جنب بلبن وطأطأ"
+    },
+    {
+      "id": "12",
+      "name": "بلبن",
+      "contact": "15761",
+      "address": "شارع المشير احمد اسماعيل القوميه"
+    },
+    {
+      "id": "13",
+      "name": "بافلو برجر",
+      "contact": "19914",
+      "address": "الفلل خلف المبره"
+    },
+    {
+      "id": "14",
+      "name": "بيتزا اسكندرية",
+      "contact": "01011171712",
+      "address": "القوميه شارع طلبة عويضة"
+    },
+    {
+      "id": "15",
+      "name": "باراديز",
+      "contact": "0552385855",
+      "address": "وسط البلد فوق كنتاكي المقاطعة"
+    },
+    {
+      "id": "16",
+      "name": "كشري ابو سمره",
+      "contact": "01019331317",
+      "address": "الغشام"
+    },
+    {
+      "id": "17",
+      "name": "كبده السعيد",
+      "contact": "01147755444",
+      "address": "شارع البوسطه وسط البلد"
+    }
+  ]
+}
