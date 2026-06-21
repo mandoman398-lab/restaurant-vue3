@@ -64,41 +64,34 @@
       <img src="/separator.png" alt="" class="separator-mobile-img" />
     </div>
 
-    <!-- ══ FEATURED NEWS 1 — text start / image end ══ -->
+    <!-- ══ FEATURED NEWS — driven by featured.json ══ -->
     <div class="featured-news-wrap">
-      <article class="featured-article featured-article-1">
-        <div class="featured-text">
-          <h2 class="featured-title">{{ t(
-            'كشري أبو طارق يدخل موسوعة جينيس بأكبر طبق كشري في العالم',
-            'Koshary Abou Tarek Enters Guinness with the World\'s Largest Koshary Dish'
-          ) }}</h2>
-          <p class="featured-desc">{{ t(
-            'حقق كشري أبو طارق رقمًا قياسيًا في موسوعة غينيس للأرقام القياسية بتحضير أكبر طبق كشري في التاريخ، في احتفالية وطنية كبرى جمعت آلاف المصريين.',
-            'Koshary Abou Tarek set a Guinness World Record by preparing the largest koshary dish in history, in a grand national celebration that brought together thousands of Egyptians.'
-          ) }}</p>
-          <router-link to="/news" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
-        </div>
-        <div class="featured-image">
-          <img src="/branch1.png" alt="" class="featured-img" />
-        </div>
-      </article>
-
-      <!-- ══ FEATURED NEWS 2 — image start / text end ══ -->
-      <article class="featured-article featured-article-2">
-        <div class="featured-image">
-          <img src="/branch1.png" alt="" class="featured-img" />
-        </div>
-        <div class="featured-text">
-          <h2 class="featured-title">{{ t(
-            'TasteAtlas تختار كشري أبو طارق ضمن أفضل ١٠٠ مطعم أسطوري',
-            'TasteAtlas Names Koshary Abou Tarek Among Top 100 Legendary Restaurants'
-          ) }}</h2>
-          <p class="featured-desc">{{ t(
-            'حصد المطعم الأسطوري لقب "مطعم أسطوري" من موقع TasteAtlas الشهير للمطاعم والأكلات الشعبية، ليكون الأول مصريًا وعربيًا في هذه القائمة المرموقة.',
-            'The legendary restaurant earned the "Legendary Restaurant" title from TasteAtlas, the renowned food and travel guide, becoming the first Egyptian and Arab entry on this prestigious list.'
-          ) }}</p>
-          <router-link to="/news" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
-        </div>
+      <article
+        v-for="(article, idx) in featuredArticles"
+        :key="article.id"
+        class="featured-article"
+        :class="`featured-article-${article.id}`"
+      >
+        <template v-if="idx % 2 === 0">
+          <div class="featured-text">
+            <h2 class="featured-title">{{ isAR ? article.titleAr : article.titleEn }}</h2>
+            <p class="featured-desc">{{ isAR ? article.descAr : article.descEn }}</p>
+            <router-link :to="article.link" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
+          </div>
+          <div class="featured-image">
+            <img :src="article.image" alt="" class="featured-img" />
+          </div>
+        </template>
+        <template v-else>
+          <div class="featured-image">
+            <img :src="article.image" alt="" class="featured-img" />
+          </div>
+          <div class="featured-text">
+            <h2 class="featured-title">{{ isAR ? article.titleAr : article.titleEn }}</h2>
+            <p class="featured-desc">{{ isAR ? article.descAr : article.descEn }}</p>
+            <router-link :to="article.link" class="featured-btn">{{ t('اقرأ أكثر', 'Read More') }}</router-link>
+          </div>
+        </template>
       </article>
     </div>
 
@@ -209,6 +202,7 @@ import { usePageMeta } from '../composables/usePageMeta'
 import allNewsData from '../data/news.json'
 import reviewsData from '../data/reviews.json'
 import statsData from '../data/stats.json'
+import featuredArticles from '../data/featured.json'
 
 const { t, isAR } = useLanguage()
 usePageMeta({ title: 'إمبراطورية أبو طارق', description: 'Koshary Abou Tarek — Egypt\'s legendary koshary since the 1950s' })

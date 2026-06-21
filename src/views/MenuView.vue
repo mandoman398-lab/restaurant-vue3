@@ -139,52 +139,14 @@ import AppIcon from '../components/AppIcon.vue'
 import { usePageMeta } from '../composables/usePageMeta'
 import { useLanguage } from '../composables/useLanguage'
 import menuData from '../data/menu.json'
+import CATEGORIES from '../data/categories.json'
+import daqqah from '../data/daqqah.json'
 
 const { t, isAR } = useLanguage()
 usePageMeta({
   title: 'قائمة الطعام — Our Menu',
   description: 'Full menu of Koshary Abou Tarek — Koshary in all sizes, Lentil Soup, Rice Pudding and drinks. Prices, sizes and the legendary daqqah sauce explained.'
 })
-
-const CATEGORIES = [
-  {
-    id: 'koshary', icon: 'bowl', headingId: 'koshary-heading',
-    nameAr: 'كشري', nameEn: 'Koshary',
-    descAr: 'الأكلة الشعبية الوطنية المصرية. طبقات من الأرز والعدس البني والمكرونة مع صلصة الطماطم المتبلة والبصل المقلي المقرمش والحمص والدقة. نباتي ١٠٠٪.',
-    descEn: "Egypt's national street food. Layers of rice, brown lentils & pasta topped with spiced tomato sauce, crispy fried onions, chickpeas & tangy daqqah. 100% plant-based."
-  },
-  {
-    id: 'soups', icon: 'soup', headingId: 'soup-heading',
-    nameAr: 'الشوربة', nameEn: 'Soups',
-    descAr: 'شورب مصرية تقليدية مطبوخة يوميًا على نار هادئة من مكونات طازجة.',
-    descEn: 'Traditional Egyptian soups slow-cooked daily from fresh ingredients.'
-  },
-  {
-    id: 'desserts', icon: 'cake', headingId: 'dessert-heading',
-    nameAr: 'الحلويات', nameEn: 'Desserts',
-    descAr: 'حلويات مصرية كلاسيكية لإنهاء وجبتك.',
-    descEn: 'Sweet Egyptian classics to round off your meal.'
-  },
-  {
-    id: 'drinks', icon: 'cup', headingId: 'drinks-heading',
-    nameAr: 'المشروبات', nameEn: 'Drinks',
-    descAr: 'مشروبات غازية متوفرة في جميع الفروع.',
-    descEn: 'Soft drinks and beverages available at all branches.'
-  }
-]
-
-const daqqah = {
-  titleAr: 'الدقة الأسطورية',
-  titleEn: 'The Legendary Daqqah',
-  descAr: 'السلاح السري لأبو طارق — صلصة خل حامضة بالثوم مصنوعة من الخل الأبيض المقطر والثوم والماء والكمون والكزبرة. تُضاف على الطاولة حسب الرغبة. اطلب "دقة في صحن" للتحكم في الكمية.',
-  descEn: "Abou Tarek's secret weapon — a tangy, garlicky vinegar sauce made with distilled white vinegar, garlic, water, cumin & coriander. Applied at the table to taste. Ask for daqqa fi sahn (on the side) to control your pour.",
-  levels: [
-    { labelAr: 'بدون', labelEn: 'Without', cls: 'level-0' },
-    { labelAr: 'عادي', labelEn: 'Regular', cls: 'level-1' },
-    { labelAr: 'زيادة', labelEn: 'Extra',   cls: 'level-2' },
-    { labelAr: 'حار جداً', labelEn: 'Very Hot', cls: 'level-3' }
-  ]
-}
 
 function itemsByCategory(catId) {
   return menuData.filter(item => item.category === catId)
