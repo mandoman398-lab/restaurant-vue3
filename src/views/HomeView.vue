@@ -270,7 +270,7 @@
           <p>{{ t('حذف', 'Remove') }} <strong>{{ deleteTarget.name }}</strong>{{ t('؟ لا يمكن التراجع عن هذا الإجراء.', '? This cannot be undone.') }}</p>
           <div class="modal-actions">
             <button class="btn btn-secondary" @click="deleteTarget = null" autofocus>{{ t('إلغاء', 'Cancel') }}</button>
-            <button class="btn btn-danger" style="background:var(--error);color:#fff" @click="doDelete">
+            <button class="btn btn-danger" @click="doDelete">
               <AppIcon name="trash" :size="14" aria-hidden="true" />
               {{ t('حذف', 'Delete') }}
             </button>

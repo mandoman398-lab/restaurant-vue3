@@ -10,20 +10,20 @@
 
           <!-- Nav pills -->
           <div class="sk-nav-pills">
-            <div class="sk-pill" style="width:64px; animation-delay:.05s"></div>
-            <div class="sk-pill" style="width:52px; animation-delay:.10s"></div>
-            <div class="sk-pill" style="width:60px; animation-delay:.15s"></div>
-            <div class="sk-pill" style="width:68px; animation-delay:.20s"></div>
-            <div class="sk-pill" style="width:72px; animation-delay:.25s"></div>
-            <div class="sk-pill" style="width:76px; animation-delay:.30s"></div>
+            <div class="sk-pill delay-05" style="width:64px"></div>
+            <div class="sk-pill delay-10" style="width:52px"></div>
+            <div class="sk-pill delay-15" style="width:60px"></div>
+            <div class="sk-pill delay-20" style="width:68px"></div>
+            <div class="sk-pill delay-25" style="width:72px"></div>
+            <div class="sk-pill delay-30" style="width:76px"></div>
           </div>
 
           <!-- End cluster -->
           <div class="sk-nb-end">
-            <div class="sk-btn-sm" style="width:40px; animation-delay:.12s"></div>
-            <div class="sk-circle" style="animation-delay:.18s"></div>
-            <div class="sk-btn-sm" style="width:70px; animation-delay:.22s"></div>
-            <div class="sk-btn-sm" style="width:56px; animation-delay:.28s"></div>
+            <div class="sk-btn-sm delay-12" style="width:40px"></div>
+            <div class="sk-circle delay-18"></div>
+            <div class="sk-btn-sm delay-22" style="width:70px"></div>
+            <div class="sk-btn-sm delay-28" style="width:56px"></div>
           </div>
         </div>
       </div>
@@ -37,37 +37,37 @@
 
         <!-- Text block — end side -->
         <div class="sk-hero-text">
-          <div class="sk-eyebrow" style="animation-delay:.1s"></div>
-          <div class="sk-headline sk-h1" style="width:72%; animation-delay:.18s"></div>
-          <div class="sk-headline sk-h1" style="width:50%; animation-delay:.24s"></div>
-          <div class="sk-line" style="width:90%; animation-delay:.30s"></div>
-          <div class="sk-line" style="width:70%; animation-delay:.36s"></div>
+          <div class="sk-eyebrow delay-10"></div>
+          <div class="sk-headline sk-h1 delay-18" style="width:72%"></div>
+          <div class="sk-headline sk-h1 delay-22" style="width:50%"></div>
+          <div class="sk-line delay-30" style="width:90%"></div>
+          <div class="sk-line delay-36" style="width:70%"></div>
           <div class="sk-cta-row">
-            <div class="sk-cta-btn" style="animation-delay:.42s"></div>
-            <div class="sk-cta-ghost" style="animation-delay:.48s"></div>
+            <div class="sk-cta-btn delay-42"></div>
+            <div class="sk-cta-ghost delay-48"></div>
           </div>
         </div>
 
         <!-- Character placeholder — start side -->
-        <div class="sk-hero-char" style="animation-delay:.3s"></div>
+        <div class="sk-hero-char delay-30"></div>
 
         <!-- Pulsing ring -->
         <div class="sk-pulse-ring" aria-hidden="true"></div>
       </div>
 
       <!-- ══ SEPARATOR ══ -->
-      <div class="sk-separator" style="animation-delay:.4s"></div>
+      <div class="sk-separator delay-40"></div>
 
       <!-- ══ HISTORY SECTION SKELETON ══ -->
       <div class="sk-section sk-history">
         <div class="sk-section-inner">
           <!-- Section label -->
           <div class="sk-section-label">
-            <div class="sk-tag" style="animation-delay:.35s"></div>
-            <div class="sk-section-title" style="animation-delay:.40s"></div>
+            <div class="sk-tag delay-35"></div>
+            <div class="sk-section-title delay-40"></div>
           </div>
           <!-- Video block -->
-          <div class="sk-video" style="animation-delay:.45s">
+          <div class="sk-video delay-45">
             <div class="sk-play-btn"></div>
           </div>
           <!-- 3-column cards -->
@@ -76,8 +76,8 @@
               <div class="sk-card-icon"></div>
               <div class="sk-card-title"></div>
               <div class="sk-card-line"></div>
-              <div class="sk-card-line" style="width:80%"></div>
-              <div class="sk-card-line" style="width:65%"></div>
+              <div class="sk-card-line sk-card-line-80"></div>
+              <div class="sk-card-line sk-card-line-65"></div>
             </div>
           </div>
         </div>
@@ -86,14 +86,14 @@
       <!-- ══ ACHIEVEMENT SKELETON ══ -->
       <div class="sk-section sk-achievement">
         <div class="sk-section-inner sk-achieve-inner">
-          <div class="sk-achieve-img" style="animation-delay:.55s"></div>
+          <div class="sk-achieve-img delay-55"></div>
           <div class="sk-achieve-text">
-            <div class="sk-tag" style="animation-delay:.58s"></div>
-            <div class="sk-headline sk-h2" style="width:90%; animation-delay:.62s"></div>
-            <div class="sk-headline sk-h2" style="width:65%; animation-delay:.66s"></div>
-            <div class="sk-line" style="animation-delay:.70s"></div>
-            <div class="sk-line" style="width:80%; animation-delay:.74s"></div>
-            <div class="sk-btn-sm" style="width:120px; animation-delay:.78s"></div>
+            <div class="sk-tag delay-58"></div>
+            <div class="sk-headline sk-h2 delay-62" style="width:90%"></div>
+            <div class="sk-headline sk-h2 delay-66" style="width:65%"></div>
+            <div class="sk-line delay-70"></div>
+            <div class="sk-line delay-74" style="width:80%"></div>
+            <div class="sk-btn-sm delay-78" style="width:120px"></div>
           </div>
         </div>
         <!-- Stats row -->
@@ -109,8 +109,8 @@
       <div class="sk-section sk-news">
         <div class="sk-section-inner">
           <div class="sk-news-header">
-            <div class="sk-section-title" style="animation-delay:.85s"></div>
-            <div class="sk-btn-sm" style="width:80px; animation-delay:.88s"></div>
+            <div class="sk-section-title delay-85"></div>
+            <div class="sk-btn-sm delay-88" style="width:80px"></div>
           </div>
           <div class="sk-news-grid">
             <div v-for="i in 3" :key="i" class="sk-news-card" :style="{ animationDelay: (.90 + i * .08) + 's' }">
@@ -119,7 +119,7 @@
                 <div class="sk-tag"></div>
                 <div class="sk-card-title"></div>
                 <div class="sk-card-line"></div>
-                <div class="sk-card-line" style="width:70%"></div>
+                <div class="sk-card-line sk-card-line-70"></div>
               </div>
             </div>
           </div>
@@ -399,9 +399,12 @@ html[dir="rtl"] .sk-news-card::after {
 .sk-card-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .sk-card { border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px; border: 1.5px solid var(--border, #e8d8d8); }
 .sk-card::after { border-radius: 18px; }
-.sk-card-icon  { width: 40px; height: 40px; border-radius: 10px; }
-.sk-card-title { width: 70%;  height: 18px; }
-.sk-card-line  { width: 100%; height: 12px; }
+.sk-card-icon     { width: 40px; height: 40px; border-radius: 10px; }
+.sk-card-title    { width: 70%;  height: 18px; }
+.sk-card-line     { width: 100%; height: 12px; }
+.sk-card-line-80  { width: 80%; }
+.sk-card-line-70  { width: 70%; }
+.sk-card-line-65  { width: 65%; }
 
 /* Achievement */
 .sk-achieve-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: center; margin-bottom: 40px; }
