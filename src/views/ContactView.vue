@@ -14,7 +14,7 @@
         <!-- Quick cards -->
         <div class="contact-cards">
           <a href="tel:16011" class="contact-card phone-card">
-            <div class="cc-icon">📞</div>
+            <div class="cc-icon"><AppIcon name="phone" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">{{ t('خط التوصيل', 'Delivery Hotline') }}</span>
               <span class="cc-value">16011</span>
@@ -22,14 +22,14 @@
             </div>
           </a>
           <a href="https://www.instagram.com/koshariabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon">📸</div>
+            <div class="cc-icon"><AppIcon name="camera" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">Instagram</span>
               <span class="cc-value">@koshariabotarek</span>
             </div>
           </a>
           <a href="https://www.facebook.com/kosharyabotarek" target="_blank" rel="noopener" class="contact-card social-card">
-            <div class="cc-icon">👥</div>
+            <div class="cc-icon"><AppIcon name="users" :size="24" color="currentColor" aria-hidden="true" /></div>
             <div class="cc-text">
               <span class="cc-label">Facebook</span>
               <span class="cc-value">@kosharyabotarek</span>
@@ -44,26 +44,28 @@
           <div class="contact-location">
             <h2>{{ t('الفرع الرئيسي', 'Main Branch') }}</h2>
             <div class="location-map-placeholder">
-              <div class="map-pin-anim" aria-hidden="true">📍</div>
+              <div class="map-pin-anim" aria-hidden="true">
+                <AppIcon name="map-pin" :size="40" color="var(--primary)" aria-hidden="true" />
+              </div>
               <p>{{ t('١٦ شارع معروف، تقاطع شارع شامبليون، وسط القاهرة، مصر', '16 Maarouf St., Champollion St. Intersection, Downtown Cairo, Egypt') }}</p>
             </div>
             <div class="location-details">
               <div class="loc-detail">
-                <span class="loc-icon">🕐</span>
+                <span class="loc-icon"><AppIcon name="clock" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('ساعات العمل', 'Opening Hours') }}</strong>
                   <p>{{ t('يومياً من ٧ صباحًا حتى منتصف الليل', 'Daily from 7 AM to midnight') }}</p>
                 </div>
               </div>
               <div class="loc-detail">
-                <span class="loc-icon">🛵</span>
+                <span class="loc-icon"><AppIcon name="truck" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('التوصيل', 'Delivery') }}</strong>
                   <p>{{ t('يومياً ٧ ص – ١٠ م عبر خط ١٦٠١١', 'Daily 7 AM – 10 PM via hotline 16011') }}</p>
                 </div>
               </div>
               <div class="loc-detail">
-                <span class="loc-icon">🌍</span>
+                <span class="loc-icon"><AppIcon name="globe" :size="20" color="var(--primary)" aria-hidden="true" /></span>
                 <div>
                   <strong>{{ t('فروعنا', 'Our Branches') }}</strong>
                   <p>{{ t('مصر • الإمارات • المملكة العربية السعودية', 'Egypt • UAE • Saudi Arabia') }}</p>
@@ -94,7 +96,10 @@
               </div>
               <button type="submit" class="btn btn-primary btn-full" :disabled="submitted">
                 <span v-if="!submitted">{{ t('إرسال الرسالة', 'Send Message') }}</span>
-                <span v-else>{{ t('✅ تم الإرسال بنجاح!', '✅ Sent Successfully!') }}</span>
+                <span v-else class="success-text">
+                  <AppIcon name="check-circle" :size="16" aria-hidden="true" />
+                  {{ t('تم الإرسال بنجاح!', 'Sent Successfully!') }}
+                </span>
               </button>
             </form>
           </div>
@@ -119,6 +124,7 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
 

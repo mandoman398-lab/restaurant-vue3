@@ -15,23 +15,19 @@
       "en": ["rice", "lentils", "pasta", "tomato sauce", "fried onions", "chickpeas", "daqqah"]
     },
     "sizes": [
-      { "size": "small", "label": { "ar": "صغير", "en": "Small" }, "price": 50 },
-      { "size": "medium", "label": { "ar": "وسط", "en": "Medium" }, "price": 60 },
-      { "size": "large", "label": { "ar": "كبير", "en": "Large" }, "price": 70 },
-      { "size": "jumbo", "label": { "ar": "جامبو", "en": "Jumbo" }, "price": 85 }
+      { "size": "small",  "label": { "ar": "صغير", "en": "Small"  }, "price": 50 },
+      { "size": "medium", "label": { "ar": "وسط",  "en": "Medium" }, "price": 60 },
+      { "size": "large",  "label": { "ar": "كبير", "en": "Large"  }, "price": 70 },
+      { "size": "jumbo",  "label": { "ar": "جامبو","en": "Jumbo"  }, "price": 85 }
     ],
     "dietary": ["vegan", "vegetarian", "gluten-friendly"],
     "customizations": [
-      { "id": "extra-sauce", "label": { "ar": "صلصة إضافية", "en": "Extra sauce" } },
-      { "id": "extra-onions", "label": { "ar": "بصل إضافي", "en": "Extra onions" } },
-      { "id": "extra-daqqah", "label": { "ar": "دقة إضافية", "en": "Extra daqqah" } }
+      { "id": "extra-sauce",  "label": { "ar": "صلصة إضافية", "en": "Extra sauce"  } },
+      { "id": "extra-onions", "label": { "ar": "بصل إضافي",   "en": "Extra onions" } },
+      { "id": "extra-daqqah", "label": { "ar": "دقة إضافية",  "en": "Extra daqqah" } }
     ],
-    "image": "🍲",
-    "flags": {
-      "isFeatured": true,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "icon": "bowl",
+    "flags": { "isFeatured": true, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "lentil-soup",
@@ -50,12 +46,8 @@
     },
     "price": 60,
     "dietary": ["vegan", "vegetarian"],
-    "image": "🥣",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "icon": "soup",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "rice-pudding",
@@ -74,12 +66,8 @@
     },
     "price": "market",
     "dietary": ["vegetarian"],
-    "image": "🍮",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": false
-    }
+    "icon": "cake",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": false }
   },
   {
     "id": "soft-drinks",
@@ -98,12 +86,8 @@
     },
     "price": "market",
     "dietary": [],
-    "image": "🥤",
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "icon": "cup",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   },
   {
     "id": "water",
@@ -116,13 +100,9 @@
       "ar": "مياه عذبة بأحجام مختلفة",
       "en": "Still water in various bottle sizes."
     },
-    "image": "💧",
     "price": "market",
     "dietary": ["vegan"],
-    "flags": {
-      "isFeatured": false,
-      "isAvailable": true,
-      "isVegan": true
-    }
+    "icon": "droplet",
+    "flags": { "isFeatured": false, "isAvailable": true, "isVegan": true }
   }
 ]

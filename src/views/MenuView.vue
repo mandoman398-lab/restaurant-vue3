@@ -14,10 +14,10 @@
         </h1>
         <p class="hero-sub">{{ t('قائمة بسيطة وأسطورية — مثالية منذ أكثر من ٧٠ عامًا', 'A deliberately simple, legendary menu — perfected over 70+ years') }}</p>
         <div class="hero-tags">
-          <span class="tag">🌱 {{ t('خيارات نباتية ١٠٠٪', '100% Vegan Options') }}</span>
-          <span class="tag">🥜 {{ t('صديق للغلوتين', 'Gluten friendly') }}</span>
-          <span class="tag">🚫 {{ t('بدون دهون حيوانية', 'No animal fats') }}</span>
-          <span class="tag">📞 {{ t('للتوصيل:', 'Delivery:') }} <a href="tel:16011" class="tag-link">16011</a></span>
+          <span class="tag"><AppIcon name="leaf" :size="14" aria-hidden="true" /> {{ t('خيارات نباتية ١٠٠٪', '100% Vegan Options') }}</span>
+          <span class="tag"><AppIcon name="shield-check" :size="14" aria-hidden="true" /> {{ t('صديق للغلوتين', 'Gluten friendly') }}</span>
+          <span class="tag"><AppIcon name="ban" :size="14" aria-hidden="true" /> {{ t('بدون دهون حيوانية', 'No animal fats') }}</span>
+          <span class="tag"><AppIcon name="phone" :size="14" aria-hidden="true" /> {{ t('للتوصيل:', 'Delivery:') }} <a href="tel:16011" class="tag-link">16011</a></span>
         </div>
       </div>
     </section>
@@ -29,7 +29,7 @@
         class="menu-section" :aria-labelledby="cat.headingId">
 
         <div class="section-label">
-          <div class="section-icon">{{ cat.icon }}</div>
+          <div class="section-icon"><AppIcon :name="cat.icon" :size="28" color="var(--primary)" aria-hidden="true" /></div>
           <div>
             <h2 :id="cat.headingId" class="section-name">
               {{ t(cat.nameAr, cat.nameEn) }}
@@ -59,7 +59,7 @@
 
             <!-- Standard item layout -->
             <template v-else>
-              <div class="item-emoji">{{ item.image }}</div>
+              <div class="item-emoji"><AppIcon :name="item.icon" :size="36" color="var(--primary)" aria-hidden="true" /></div>
               <div class="item-names">
                 <span class="item-name">{{ t(item.name.ar, item.name.en) }}</span>
                 <span class="item-name-alt">{{ isAR ? item.name.en : item.name.ar }}</span>
@@ -71,7 +71,7 @@
             <!-- Size rows (koshary only) -->
             <div v-if="item.sizes?.length" class="item-sizes">
               <div v-for="sz in item.sizes" :key="sz.size" class="size-row">
-                <span class="size-icon">🥣</span>
+                <span class="size-icon"><AppIcon name="soup" :size="16" color="var(--primary)" aria-hidden="true" /></span>
                 <span class="size-name">{{ t(sz.label.ar, sz.label.en) }}</span>
                 <span class="size-price">~{{ sz.price }} {{ t('ج.م.', 'EGP') }}</span>
               </div>
@@ -79,7 +79,7 @@
 
             <!-- Customization hint -->
             <div v-if="item.customizations?.length" class="item-note">
-              💡 {{ t('خصّص طلبك:', 'Customize with') }}
+              <AppIcon name="info" :size="14" aria-hidden="true" /> {{ t('خصّص طلبك:', 'Customize with') }}
               {{ item.customizations.map(c => t(c.label.ar, c.label.en)).join(t('، ', ', ')) }}
             </div>
 
@@ -92,7 +92,7 @@
 
         <!-- Daqqah info card — shown after the koshary section -->
         <div v-if="cat.id === 'koshary'" class="daqqah-card">
-          <div class="daqqah-icon">🫙</div>
+          <div class="daqqah-icon"><AppIcon name="jar" :size="44" color="var(--primary)" aria-hidden="true" /></div>
           <div class="daqqah-info">
             <h3 class="daqqah-title">
               {{ t(daqqah.titleAr, daqqah.titleEn) }}
@@ -123,8 +123,8 @@
           </a>
           <div class="cta-platforms">
             <span class="platform-label">{{ t('متوفر أيضًا على:', 'Also on:') }}</span>
-            <span class="platform-chip">🛵 Talabat</span>
-            <span class="platform-chip">📱 Elmenus</span>
+            <span class="platform-chip"><AppIcon name="truck" :size="14" aria-hidden="true" /> Talabat</span>
+            <span class="platform-chip"><AppIcon name="smartphone" :size="14" aria-hidden="true" /> Elmenus</span>
           </div>
         </div>
       </section>
@@ -148,25 +148,25 @@ usePageMeta({
 
 const CATEGORIES = [
   {
-    id: 'koshary', icon: '🍲', headingId: 'koshary-heading',
+    id: 'koshary', icon: 'bowl', headingId: 'koshary-heading',
     nameAr: 'كشري', nameEn: 'Koshary',
     descAr: 'الأكلة الشعبية الوطنية المصرية. طبقات من الأرز والعدس البني والمكرونة مع صلصة الطماطم المتبلة والبصل المقلي المقرمش والحمص والدقة. نباتي ١٠٠٪.',
     descEn: "Egypt's national street food. Layers of rice, brown lentils & pasta topped with spiced tomato sauce, crispy fried onions, chickpeas & tangy daqqah. 100% plant-based."
   },
   {
-    id: 'soups', icon: '🥣', headingId: 'soup-heading',
+    id: 'soups', icon: 'soup', headingId: 'soup-heading',
     nameAr: 'الشوربة', nameEn: 'Soups',
     descAr: 'شورب مصرية تقليدية مطبوخة يوميًا على نار هادئة من مكونات طازجة.',
     descEn: 'Traditional Egyptian soups slow-cooked daily from fresh ingredients.'
   },
   {
-    id: 'desserts', icon: '🍮', headingId: 'dessert-heading',
+    id: 'desserts', icon: 'cake', headingId: 'dessert-heading',
     nameAr: 'الحلويات', nameEn: 'Desserts',
     descAr: 'حلويات مصرية كلاسيكية لإنهاء وجبتك.',
     descEn: 'Sweet Egyptian classics to round off your meal.'
   },
   {
-    id: 'drinks', icon: '🥤', headingId: 'drinks-heading',
+    id: 'drinks', icon: 'cup', headingId: 'drinks-heading',
     nameAr: 'المشروبات', nameEn: 'Drinks',
     descAr: 'مشروبات غازية متوفرة في جميع الفروع.',
     descEn: 'Soft drinks and beverages available at all branches.'
@@ -182,7 +182,7 @@ const daqqah = {
     { labelAr: 'بدون', labelEn: 'Without', cls: 'level-0' },
     { labelAr: 'عادي', labelEn: 'Regular', cls: 'level-1' },
     { labelAr: 'زيادة', labelEn: 'Extra',   cls: 'level-2' },
-    { labelAr: '🔥 حار جداً', labelEn: '🔥 Very Hot', cls: 'level-3' }
+    { labelAr: 'حار جداً', labelEn: 'Very Hot', cls: 'level-3' }
   ]
 }
 

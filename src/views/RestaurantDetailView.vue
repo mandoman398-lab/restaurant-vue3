@@ -10,7 +10,7 @@
 
       <!-- Hero -->
       <div class="detail-hero">
-        <div class="hero-bowl" aria-hidden="true">🍲</div>
+        <div class="hero-bowl" aria-hidden="true"><AppIcon name="bowl" :size="80" color="rgba(255,255,255,.85)" /></div>
         <div class="hero-info">
           <div class="hero-top">
             <div>

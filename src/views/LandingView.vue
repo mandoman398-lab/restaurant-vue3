@@ -113,7 +113,7 @@
           <article v-for="article in newsItems" :key="article.id" class="news-card">
             <div class="news-card-thumb">
               <div class="news-card-thumb-inner" :style="{ background: article.color }">
-                <span class="news-card-emoji">{{ article.emoji }}</span>
+                <AppIcon :name="article.icon" :size="28" color="rgba(255,255,255,.85)" aria-hidden="true" />
               </div>
             </div>
             <div class="news-card-body">
@@ -203,6 +203,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
 import allNewsData from '../data/news.json'
@@ -445,7 +446,6 @@ html[dir="rtl"] .featured-article-2 { flex-direction: row; }
   width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
 }
-.news-card-emoji { font-size: 3.5rem; }
 .news-card-body { padding: 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .news-card-top { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
 .news-card-title { font-size: 1.1rem; font-weight: 800; color: #1D1B1B; font-family: 'Poppins', 'Cairo', sans-serif; line-height: 1.3; width: 80%; }

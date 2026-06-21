@@ -3,25 +3,25 @@
     {
       "id": "koshary",
       "name": { "ar": "كشري", "en": "Koshary" },
-      "icon": "🍲",
+      "icon": "bowl",
       "order": 1
     },
     {
       "id": "soups",
       "name": { "ar": "الشوربة", "en": "Soups" },
-      "icon": "🥣",
+      "icon": "soup",
       "order": 2
     },
     {
       "id": "desserts",
       "name": { "ar": "الحلويات", "en": "Desserts" },
-      "icon": "🍮",
+      "icon": "cake",
       "order": 3
     },
     {
       "id": "drinks",
       "name": { "ar": "المشروبات", "en": "Drinks" },
-      "icon": "🥤",
+      "icon": "cup",
       "order": 4
     }
   ],
@@ -43,7 +43,7 @@
     },
     {
       "level": 3,
-      "name": { "ar": "حار جداً 🔥", "en": "Very Hot 🔥" },
+      "name": { "ar": "حار جداً", "en": "Very Hot" },
       "description": { "ar": "دقة حارة جداً", "en": "Very hot daqqah" }
     }
   ],

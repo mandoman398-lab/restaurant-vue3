@@ -105,15 +105,15 @@
               </a>
             </div>
             <div class="footer-hotline">
-              <a href="tel:16011" class="hotline-link">📞 <strong>16011</strong></a>
+              <a href="tel:16011" class="hotline-link"><AppIcon name="phone" :size="14" aria-hidden="true" /> <strong>16011</strong></a>
               <span class="hotline-hours">{{ t('يومياً ٧ ص – ١٠ م', 'Daily 7 AM – 10 PM') }}</span>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
           <div class="footer-badges">
-            <span class="guinness-badge">🏆 {{ t('موسوعة غينيس للأرقام القياسية', 'Guinness World Records') }}</span>
-            <span class="tasteatlas-badge">⭐ {{ t('أفضل ١٠٠ مطعم – TasteAtlas', 'Top 100 Legendary – TasteAtlas') }}</span>
+            <span class="guinness-badge"><AppIcon name="trophy" :size="14" aria-hidden="true" /> {{ t('موسوعة غينيس للأرقام القياسية', 'Guinness World Records') }}</span>
+            <span class="tasteatlas-badge"><AppIcon name="star-fill" :size="14" aria-hidden="true" /> {{ t('أفضل ١٠٠ مطعم – TasteAtlas', 'Top 100 Legendary – TasteAtlas') }}</span>
           </div>
           <p class="footer-copy">© {{ new Date().getFullYear() }} {{ t('كشري أبو طارق. جميع الحقوق محفوظة.', 'Koshary Abou Tarek. All rights reserved.') }}</p>
         </div>

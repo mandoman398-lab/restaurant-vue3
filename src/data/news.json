@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "emoji": "🏆",
+    "icon": "trophy",
     "tagAr": "إنجاز عالمي",
     "tagEn": "World Achievement",
     "color": "linear-gradient(135deg,#1a0a0a,#3d1515)",
@@ -14,7 +14,7 @@
   },
   {
     "id": 2,
-    "emoji": "🎖️",
+    "icon": "award",
     "tagAr": "تميّز",
     "tagEn": "Recognition",
     "color": "linear-gradient(135deg,#0a1a2a,#153050)",
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "emoji": "🌍",
+    "icon": "globe",
     "tagAr": "توسع",
     "tagEn": "Expansion",
     "color": "linear-gradient(135deg,#0a1a0a,#153015)",
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "emoji": "🏛️",
+    "icon": "landmark",
     "tagAr": "تراث",
     "tagEn": "Heritage",
     "color": "linear-gradient(135deg,#1a1a0a,#302a15)",
@@ -53,7 +53,7 @@
   },
   {
     "id": 5,
-    "emoji": "📺",
+    "icon": "tv",
     "tagAr": "إعلام",
     "tagEn": "Media",
     "color": "linear-gradient(135deg,#0a0a1a,#152030)",
@@ -66,7 +66,7 @@
   },
   {
     "id": 6,
-    "emoji": "🤝",
+    "icon": "users",
     "tagAr": "شراكة",
     "tagEn": "Partnership",
     "color": "linear-gradient(135deg,#1a0a1a,#2d1530)",
@@ -79,7 +79,7 @@
   },
   {
     "id": 7,
-    "emoji": "🥇",
+    "icon": "award",
     "tagAr": "جائزة",
     "tagEn": "Award",
     "color": "linear-gradient(135deg,#1a1500,#302800)",

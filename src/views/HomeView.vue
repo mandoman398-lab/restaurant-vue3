@@ -54,7 +54,7 @@
       <div class="menu-grid" role="list">
         <article v-for="item in menuHighlights" :key="item.id"
           class="menu-item" :class="{ featured: item.flags.isFeatured }" role="listitem">
-          <div class="menu-icon" aria-hidden="true">{{ item.image }}</div>
+          <div class="menu-icon" aria-hidden="true"><AppIcon :name="item.icon" :size="32" color="var(--primary)" /></div>
           <div class="menu-info">
             <h3>{{ t(item.name.ar, item.name.en) }}</h3>
             <p>{{ t(item.description.ar, item.description.en) }}</p>
@@ -133,7 +133,7 @@
       <!-- Empty: no data -->
       <template v-else-if="store.restaurants.length === 0">
         <div class="empty-state" role="status">
-          <div class="empty-icon" aria-hidden="true">🍲</div>
+          <div class="empty-icon" aria-hidden="true"><AppIcon name="bowl" :size="56" color="var(--border)" /></div>
           <h3>{{ t('لا توجد فروع بعد', 'No branches yet') }}</h3>
           <p>{{ auth.isAuthenticated ? t('أضف أول فرع للبدء.', 'Add the first branch to get started.') : t('لا توجد بيانات فروع حتى الآن.', 'No branch data available yet.') }}</p>
           <router-link v-if="auth.isAuthenticated" to="/add" class="btn btn-primary">
@@ -442,7 +442,7 @@ onMounted(() => {
   display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
   color: var(--text-muted);
 }
-.empty-icon { font-size: 4rem; }
+.empty-icon { display: flex; justify-content: center; }
 .empty-state h3 { margin: 0; font-size: 1.2rem; color: var(--text); }
 .empty-state p  { margin: 0; }
 

@@ -44,7 +44,7 @@
             <h2>{{ t('الكشري على قائمة التراث اليونسكو', 'Koshary on the UNESCO Heritage List') }}</h2>
           </div>
           <div class="unesco-content">
-            <div class="unesco-badge">🏛️</div>
+            <div class="unesco-badge"><AppIcon name="landmark" :size="52" color="var(--primary)" aria-hidden="true" /></div>
             <div class="unesco-text">
               <p>{{ t(
                 'اختارت منظمة اليونسكو "الكشري" ممثلًا للمطبخ الشعبي المصري في قائمة التراث الثقافي غير المادي للإنسانية، واختارت كشري أبو طارق ممثلًا رسميًا لهذا التراث.',
@@ -68,7 +68,7 @@
           </div>
           <div class="values-grid">
             <div class="value-card" v-for="v in values" :key="v.icon">
-              <div class="value-icon">{{ v.icon }}</div>
+              <div class="value-icon"><AppIcon :name="v.icon" :size="28" color="var(--primary)" aria-hidden="true" /></div>
               <h3>{{ t(v.titleAr, v.titleEn) }}</h3>
               <p>{{ t(v.descAr, v.descEn) }}</p>
             </div>
@@ -82,6 +82,7 @@
 
 <script setup>
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
 import valuesData from '../data/values.json'

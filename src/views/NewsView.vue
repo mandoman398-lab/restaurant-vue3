@@ -14,7 +14,7 @@
         <!-- Featured article -->
         <article class="news-featured">
           <div class="featured-thumb" :style="{ background: featuredNews.color }">
-            <span class="featured-emoji">{{ featuredNews.emoji }}</span>
+            <AppIcon :name="featuredNews.icon" :size="56" color="rgba(255,255,255,.85)" aria-hidden="true" />
           </div>
           <div class="featured-text">
             <span class="news-tag">{{ t(featuredNews.tagAr, featuredNews.tagEn) }}</span>
@@ -28,7 +28,7 @@
         <div class="all-news-grid">
           <article v-for="a in allNews" :key="a.id" class="news-card">
             <div class="news-thumb">
-              <span class="news-thumb-emoji">{{ a.emoji }}</span>
+              <AppIcon :name="a.icon" :size="32" color="rgba(255,255,255,.85)" aria-hidden="true" />
             </div>
             <div class="news-body-inner">
               <span class="news-tag">{{ t(a.tagAr, a.tagEn) }}</span>
@@ -46,6 +46,7 @@
 
 <script setup>
 import DefaultLayout from '../layouts/DefaultLayout.vue'
+import AppIcon from '../components/AppIcon.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
 import allNewsData from '../data/news.json'
@@ -77,7 +78,6 @@ const allNews = allNewsData.slice(1)
 }
 .news-featured:hover { border-color:var(--primary); }
 .featured-thumb { background:linear-gradient(135deg,#1a0a0a,#3d1515); display:flex; align-items:center; justify-content:center; height:100%; min-height:220px; }
-.featured-emoji { font-size:5rem; }
 .featured-text { padding:var(--sp-6); }
 .featured-text h2 { font-size:1.3rem; font-weight:900; color:var(--text); margin:var(--sp-2) 0 var(--sp-3); line-height:1.35; }
 .featured-text p  { font-size:.88rem; color:var(--text-muted); line-height:1.75; margin:0 0 var(--sp-3); }
@@ -90,7 +90,6 @@ const allNews = allNewsData.slice(1)
 .news-card { background:var(--surface); border:1.5px solid var(--border); border-radius:var(--r-2xl); overflow:hidden; transition:border-color .2s,box-shadow .2s,transform .2s; }
 .news-card:hover { border-color:var(--primary); box-shadow:var(--shadow-md); transform:translateY(-3px); }
 .news-thumb { aspect-ratio:16/9; background:linear-gradient(135deg,#1a0a0a,#2d1515); display:flex; align-items:center; justify-content:center; }
-.news-thumb-emoji { font-size:3rem; }
 .news-body-inner { padding:var(--sp-4) var(--sp-5); }
 .news-body-inner h3 { font-size:.9rem; font-weight:800; color:var(--text); margin:0 0 var(--sp-2); line-height:1.4; }
 .news-body-inner p  { font-size:.8rem; color:var(--text-muted); line-height:1.6; margin:0 0 var(--sp-3); }
