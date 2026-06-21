@@ -73,11 +73,11 @@
           <div class="footer-col">
             <h3 class="footer-col-title">{{ t('أصناف', 'Menu') }}</h3>
             <ul class="footer-col-links">
-              <li><router-link to="/menu" class="footer-link">{{ t('كشري', 'Koshary') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('شوربة', 'Soup') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('حلويات', 'Desserts') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('مشروبات', 'Drinks') }}</router-link></li>
-              <li><router-link to="/menu" class="footer-link">{{ t('إضافات', 'Add-ons') }}</router-link></li>
+              <li><router-link to="/menu#koshary" class="footer-link">{{ t('كشري', 'Koshary') }}</router-link></li>
+              <li><router-link to="/menu#soups" class="footer-link">{{ t('شوربة', 'Soup') }}</router-link></li>
+              <li><router-link to="/menu#desserts" class="footer-link">{{ t('حلويات', 'Desserts') }}</router-link></li>
+              <li><router-link to="/menu#drinks" class="footer-link">{{ t('مشروبات', 'Drinks') }}</router-link></li>
+              <li><router-link to="/menu#extras" class="footer-link">{{ t('إضافات', 'Add-ons') }}</router-link></li>
             </ul>
           </div>
           <div class="footer-col">

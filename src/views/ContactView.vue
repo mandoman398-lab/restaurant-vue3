@@ -1,6 +1,6 @@
 <template>
   <DefaultLayout>
-    <section class="page-hero" aria-label="Contact">
+    <section class="page-hero" :style="{ backgroundImage: 'url(/branch1.png)' }" aria-label="Contact">
       <div class="page-hero-inner">
         <span class="page-eyebrow">{{ t('كشري أبو طارق', 'Koshary Abou Tarek') }}</span>
         <h1 class="page-hero-title">{{ t('تواصل معنا', 'Contact Us') }}</h1>
@@ -144,7 +144,16 @@ function submitForm() {
 </script>
 
 <style scoped>
-.page-hero { text-align: center; padding: var(--sp-12) var(--sp-8); }
+.page-hero {
+  position: relative; overflow: hidden;
+  background-size: cover; background-position: center 30%;
+  min-height: 280px; display: flex; align-items: center; justify-content: center;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,4,4,.72) 0%, rgba(20,6,6,.88) 100%);
+}
+.page-hero-inner { position: relative; z-index: 1; }
 .contact-body { background: var(--bg); }
 .contact-inner { display: flex; flex-direction: column; gap: var(--sp-8); }
 

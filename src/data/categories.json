@@ -12,7 +12,7 @@
     "id": "soups",
     "icon": "soup",
     "headingId": "soup-heading",
-    "nameAr": "الشوربة",
+    "nameAr": "شوربة",
     "nameEn": "Soups",
     "descAr": "شورب مصرية تقليدية مطبوخة يوميًا على نار هادئة من مكونات طازجة.",
     "descEn": "Traditional Egyptian soups slow-cooked daily from fresh ingredients."
@@ -21,7 +21,7 @@
     "id": "desserts",
     "icon": "cake",
     "headingId": "dessert-heading",
-    "nameAr": "الحلويات",
+    "nameAr": "حلويات",
     "nameEn": "Desserts",
     "descAr": "حلويات مصرية كلاسيكية لإنهاء وجبتك.",
     "descEn": "Sweet Egyptian classics to round off your meal."
@@ -30,9 +30,18 @@
     "id": "drinks",
     "icon": "cup",
     "headingId": "drinks-heading",
-    "nameAr": "المشروبات",
+    "nameAr": "مشروبات",
     "nameEn": "Drinks",
     "descAr": "مشروبات غازية متوفرة في جميع الفروع.",
     "descEn": "Soft drinks and beverages available at all branches."
+  },
+  {
+    "id": "extras",
+    "icon": "plus-circle",
+    "headingId": "extras-heading",
+    "nameAr": "إضافات",
+    "nameEn": "Add-ons",
+    "descAr": "خصّص طبقك كما تريد — إضافات لذيذة بأسعار رمزية.",
+    "descEn": "Customize your plate — delicious add-ons at modest prices."
   }
 ]

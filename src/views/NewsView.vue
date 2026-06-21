@@ -1,6 +1,6 @@
 <template>
   <DefaultLayout>
-    <section class="page-hero" aria-label="News">
+    <section class="page-hero" :style="{ backgroundImage: 'url(/Homebg.png)' }" aria-label="News">
       <div class="page-hero-inner">
         <span class="page-eyebrow">{{ t('كشري أبو طارق', 'Koshary Abou Tarek') }}</span>
         <h1 class="page-hero-title">{{ t('الأخبار', 'News') }}</h1>
@@ -59,7 +59,16 @@ const allNews = allNewsData.slice(1)
 </script>
 
 <style scoped>
-.page-hero { text-align: center; padding: var(--sp-12) var(--sp-8); }
+.page-hero {
+  position: relative; overflow: hidden;
+  background-size: cover; background-position: center;
+  min-height: 280px; display: flex; align-items: center; justify-content: center;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(15,4,4,.72) 0%, rgba(20,6,6,.85) 100%);
+}
+.page-hero-inner { position: relative; z-index: 1; }
 .news-body { background: var(--bg); }
 
 /* Featured */
