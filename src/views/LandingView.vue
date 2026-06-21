@@ -124,7 +124,7 @@
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#1D1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <p class="news-card-desc">{{ t(article.descAr, article.descEn) }}</p>
+              <p class="news-card-desc">{{ t(article.excerptAr, article.excerptEn) }}</p>
             </div>
           </article>
         </div>
@@ -153,25 +153,13 @@
     <!-- ══ STATS ══ -->
     <section class="stats-section">
       <div class="stats-inner">
-        <div class="stat-item">
-          <span class="stat-num">70+</span>
-          <span class="stat-lbl">{{ t('عامًا من الخبرة', 'Years of Excellence') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">6+</span>
-          <span class="stat-lbl">{{ t('فروع في 3 دول', 'Branches in 3 Countries') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">4</span>
-          <span class="stat-lbl">{{ t('طوابق في وسط البلد', 'Floors Downtown Cairo') }}</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <span class="stat-num">🏆</span>
-          <span class="stat-lbl">{{ t('سجل غينيس', 'Guinness World Record') }}</span>
-        </div>
+        <template v-for="(stat, i) in landingStats" :key="stat.value">
+          <div class="stat-item">
+            <span class="stat-num">{{ stat.value }}</span>
+            <span class="stat-lbl">{{ t(stat.labelAr, stat.labelEn) }}</span>
+          </div>
+          <div v-if="i < landingStats.length - 1" class="stat-divider" aria-hidden="true"></div>
+        </template>
       </div>
     </section>
 
@@ -217,6 +205,9 @@ import { ref, computed, onMounted } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
+import allNewsData from '../data/news.json'
+import reviewsData from '../data/reviews.json'
+import statsData from '../data/stats.json'
 
 const { t, isAR } = useLanguage()
 usePageMeta({ title: 'إمبراطورية أبو طارق', description: 'Koshary Abou Tarek — Egypt\'s legendary koshary since the 1950s' })
@@ -224,62 +215,9 @@ usePageMeta({ title: 'إمبراطورية أبو طارق', description: 'Kosha
 const heroVisible = ref(false)
 onMounted(() => setTimeout(() => { heroVisible.value = true }, 80))
 
-const newsItems = [
-  {
-    id: 1, emoji: '🏆', color: 'linear-gradient(135deg,#1a0a0a,#3d1515)',
-    titleAr: 'كشري أبو طارق يدخل موسوعة جينيس',
-    titleEn: 'Koshary Abou Tarek Enters Guinness World Records',
-    descAr: 'رقم قياسي عالمي بأكبر طبق كشري في التاريخ في احتفالية وطنية كبرى.',
-    descEn: 'A world record for the largest koshary dish in history at a grand national celebration.'
-  },
-  {
-    id: 2, emoji: '⭐', color: 'linear-gradient(135deg,#0a1a2a,#153050)',
-    titleAr: 'TasteAtlas: أفضل ١٠٠ مطعم أسطوري في العالم',
-    titleEn: 'TasteAtlas: Top 100 Legendary Restaurants',
-    descAr: 'المطعم الأول عربيًا ومصريًا يحصل على لقب "مطعم أسطوري" من TasteAtlas.',
-    descEn: 'The first Egyptian and Arab restaurant to earn the "Legendary" title from TasteAtlas.'
-  },
-  {
-    id: 3, emoji: '🌍', color: 'linear-gradient(135deg,#0a1a0a,#153015)',
-    titleAr: 'توسع دولي: فروع في الإمارات والسعودية',
-    titleEn: 'Global Expansion: Branches in UAE & Saudi Arabia',
-    descAr: 'يواصل كشري أبو طارق توسعه الدولي بفروع جديدة في دول الخليج العربي.',
-    descEn: 'Koshary Abou Tarek continues its international expansion with new branches across the Gulf.'
-  }
-]
-
-const reviews = [
-  {
-    textAr: 'تجربة لا تُنسى! الكشري هنا له طعم مختلف تمامًا عن أي مكان آخر. المكان نظيف والخدمة سريعة والأسعار معقولة جدًا.',
-    textEn: 'An unforgettable experience! The koshary here has a completely different taste from anywhere else. Clean place, fast service, and very reasonable prices.',
-    name: 'أحمد محمد', nameEn: 'Ahmed Mohamed', rating: 5,
-    roleAr: 'عميل منتظم', roleEn: 'Regular Customer'
-  },
-  {
-    textAr: 'زرت المطعم لأول مرة في رحلتي إلى القاهرة ووجدته في قائمة أفضل مطاعم مصر. والله يستاهل كل كلمة مدح!',
-    textEn: 'I visited the restaurant for the first time on my trip to Cairo after finding it on Egypt\'s best restaurants list. It truly deserves every word of praise!',
-    name: 'سارة خالد', rating: 5,
-    roleAr: 'زائرة من الكويت', roleEn: 'Visitor from Kuwait'
-  },
-  {
-    textAr: 'أكلت الكشري في أماكن كثيرة لكن أبو طارق له مذاق خاص. الصلصة والدقة مختلفة. شكرًا على الاستقبال الجميل دائمًا.',
-    textEn: 'I\'ve had koshary in many places but Abou Tarek has a special flavor. The sauce and precision are different. Thank you for the wonderful reception always.',
-    name: 'محمد علي', rating: 5,
-    roleAr: 'من القاهرة', roleEn: 'From Cairo'
-  },
-  {
-    textAr: 'المطعم ذو التاريخ العريق يحافظ على جودته منذ سنوات. الكشري هنا هو الأصل والباقي تقليد.',
-    textEn: 'This historic restaurant has maintained its quality for years. The koshary here is the original, everything else is an imitation.',
-    name: 'فاطمة إبراهيم', rating: 5,
-    roleAr: 'من الإسكندرية', roleEn: 'From Alexandria'
-  },
-  {
-    textAr: 'تجربة رائعة في مطعم بتاريخ أكثر من 70 سنة. استحق كل لحظة انتظار. سأعود قريبًا بالتأكيد!',
-    textEn: 'An amazing experience at a restaurant with over 70 years of history. Worth every moment of waiting. I will definitely be back soon!',
-    name: 'Omar Hassan', rating: 5,
-    roleAr: 'زائر من الخارج', roleEn: 'International Visitor'
-  }
-]
+const newsItems = allNewsData.slice(0, 3)
+const reviews   = reviewsData
+const landingStats = statsData.landing
 
 const reviewIndex = ref(0)
 const cardWidth = 360 + 16

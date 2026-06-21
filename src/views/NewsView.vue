@@ -13,17 +13,14 @@
 
         <!-- Featured article -->
         <article class="news-featured">
-          <div class="featured-thumb">
-            <span class="featured-emoji">🏆</span>
+          <div class="featured-thumb" :style="{ background: featuredNews.color }">
+            <span class="featured-emoji">{{ featuredNews.emoji }}</span>
           </div>
           <div class="featured-text">
-            <span class="news-tag">{{ t('إنجاز عالمي', 'World Achievement') }}</span>
-            <h2>{{ t('كشري أبو طارق يدخل موسوعة جينيس للأرقام القياسية', 'Koshary Abou Tarek Enters Guinness World Records') }}</h2>
-            <p>{{ t(
-              'حقق كشري أبو طارق رقمًا قياسيًا عالميًا بتحضير أكبر طبق كشري في التاريخ خلال احتفالية وطنية كبرى، ليثبت أن الكشري المصري ليس مجرد أكلة — بل إرث حضاري حقيقي.',
-              'Koshary Abou Tarek set a world record by preparing the largest koshary dish in history during a grand national celebration, proving that Egyptian koshary is not just a dish — it\'s a true civilizational heritage.'
-            ) }}</p>
-            <span class="news-date">2024</span>
+            <span class="news-tag">{{ t(featuredNews.tagAr, featuredNews.tagEn) }}</span>
+            <h2>{{ t(featuredNews.titleAr, featuredNews.titleEn) }}</h2>
+            <p>{{ t(featuredNews.excerptAr, featuredNews.excerptEn) }}</p>
+            <span class="news-date">{{ featuredNews.date }}</span>
           </div>
         </article>
 
@@ -51,60 +48,13 @@
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
+import allNewsData from '../data/news.json'
 
 const { t } = useLanguage()
 usePageMeta({ title: 'الأخبار', description: 'Latest news from Koshary Abou Tarek' })
 
-const allNews = [
-  {
-    id:1, emoji:'🎖️', tagAr:'تميّز', tagEn:'Recognition',
-    titleAr:'TasteAtlas تختار كشري أبو طارق ضمن أفضل ١٠٠ مطعم أسطوري في العالم',
-    titleEn:'TasteAtlas Lists Koshary Abou Tarek Among World\'s Top 100 Legendary Restaurants',
-    excerptAr:'حصد المطعم لقب "أسطوري" من موسوعة TasteAtlas ليكون الأول مصريًا في هذه القائمة المرموقة.',
-    excerptEn:'The restaurant earned the "Legendary" title from TasteAtlas, becoming the first Egyptian entry on this prestigious list.',
-    date:'2024'
-  },
-  {
-    id:2, emoji:'🌍', tagAr:'توسع', tagEn:'Expansion',
-    titleAr:'افتتاح فرع جديد في المملكة العربية السعودية',
-    titleEn:'New Branch Opens in Saudi Arabia',
-    excerptAr:'يواصل كشري أبو طارق توسعه في منطقة الخليج بافتتاح فرعه الجديد في المملكة.',
-    excerptEn:'Koshary Abou Tarek continues its Gulf expansion with a new branch in Saudi Arabia.',
-    date:'2023'
-  },
-  {
-    id:3, emoji:'🏛️', tagAr:'تراث', tagEn:'Heritage',
-    titleAr:'الكشري على قائمة اليونسكو للتراث الثقافي غير المادي',
-    titleEn:'Koshary Added to UNESCO Intangible Cultural Heritage List',
-    excerptAr:'أعلنت اليونسكو إدراج الكشري المصري في قائمة التراث الثقافي غير المادي للإنسانية.',
-    excerptEn:'UNESCO announced the inclusion of Egyptian Koshary on the Intangible Cultural Heritage of Humanity list.',
-    date:'2023'
-  },
-  {
-    id:4, emoji:'📺', tagAr:'إعلام', tagEn:'Media',
-    titleAr:'كشري أبو طارق في برامج عالمية وتقارير عن المطبخ المصري',
-    titleEn:'Koshary Abou Tarek Featured in International Shows on Egyptian Cuisine',
-    excerptAr:'سلّطت برامج دولية الضوء على كشري أبو طارق كسفير للمطبخ المصري الأصيل.',
-    excerptEn:'International programs highlighted Koshary Abou Tarek as an ambassador of authentic Egyptian cuisine.',
-    date:'2023'
-  },
-  {
-    id:5, emoji:'🤝', tagAr:'شراكة', tagEn:'Partnership',
-    titleAr:'شراكة استراتيجية لتوسيع التوصيل عبر منصات رقمية',
-    titleEn:'Strategic Partnership to Expand Delivery via Digital Platforms',
-    excerptAr:'أطلق كشري أبو طارق شراكات جديدة مع منصات توصيل رائدة لتغطية مناطق أوسع.',
-    excerptEn:'Koshary Abou Tarek launched new partnerships with leading delivery platforms to cover wider areas.',
-    date:'2022'
-  },
-  {
-    id:6, emoji:'🥇', tagAr:'جائزة', tagEn:'Award',
-    titleAr:'جائزة أفضل مطعم شعبي في مصر لعام ٢٠٢٢',
-    titleEn:'Best Egyptian Street Food Restaurant Award 2022',
-    excerptAr:'حصد كشري أبو طارق جائزة أفضل مطعم شعبي في مصر من إحدى أبرز المجلات السياحية.',
-    excerptEn:'Koshary Abou Tarek won the Best Egyptian Street Food Restaurant award from one of the most prominent tourism magazines.',
-    date:'2022'
-  }
-]
+const featuredNews = allNewsData[0]
+const allNews = allNewsData.slice(1)
 </script>
 
 <style scoped>

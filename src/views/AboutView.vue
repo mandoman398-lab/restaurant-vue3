@@ -84,32 +84,12 @@
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import { useLanguage } from '../composables/useLanguage'
 import { usePageMeta } from '../composables/usePageMeta'
+import valuesData from '../data/values.json'
 
 const { t } = useLanguage()
 usePageMeta({ title: 'من نحن', description: 'About Koshary Abou Tarek — Egypt\'s legendary koshary restaurant since the 1950s' })
 
-const values = [
-  {
-    icon: '🌱', titleAr: 'نباتي ١٠٠٪', titleEn: '100% Plant-Based',
-    descAr: 'كشري أبو طارق نباتي بالكامل — لا دهون حيوانية، لا جيلاتين، مناسب للجميع.',
-    descEn: 'Koshary Abou Tarek is fully plant-based — no animal fats, no gelatin, suitable for everyone.'
-  },
-  {
-    icon: '📜', titleAr: 'وصفة سرية', titleEn: 'Secret Recipe',
-    descAr: 'وصفة الدقة والصلصة ورّثها الأجداد وتناقلتها الأجيال بكل أمانة.',
-    descEn: 'The daqqah and sauce recipe was passed down through generations with complete fidelity.'
-  },
-  {
-    icon: '🏆', titleAr: 'جودة معترف بها عالميًا', titleEn: 'Globally Recognized Quality',
-    descAr: 'جينيس للأرقام القياسية، TasteAtlas الأسطوري، واليونسكو — شهادات تثق بها.',
-    descEn: 'Guinness World Records, TasteAtlas Legendary, and UNESCO — credentials you can trust.'
-  },
-  {
-    icon: '🤝', titleAr: 'خدمة الجميع', titleEn: 'Serving Everyone',
-    descAr: 'من طلاب الجامعة إلى السياح والمشاهير — الكشري للجميع بأسعار يرضى بها الجميع.',
-    descEn: 'From university students to tourists and celebrities — koshary for everyone at prices everyone loves.'
-  }
-]
+const values = valuesData
 </script>
 
 <style scoped>

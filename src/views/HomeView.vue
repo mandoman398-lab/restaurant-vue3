@@ -19,25 +19,13 @@
           ) }}
         </p>
         <div class="hero-stats" role="list" aria-label="Restaurant statistics">
-          <div class="stat" role="listitem">
-            <span class="stat-num">1950s</span>
-            <span class="stat-label">{{ t('التأسيس', 'Founded') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">4</span>
-            <span class="stat-label">{{ t('طوابق', 'Floors') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">6+</span>
-            <span class="stat-label">{{ t('فروع', 'Branches') }}</span>
-          </div>
-          <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem">
-            <span class="stat-num">3</span>
-            <span class="stat-label">{{ t('دول', 'Countries') }}</span>
-          </div>
+          <template v-for="(stat, i) in heroStats" :key="stat.value">
+            <div class="stat" role="listitem">
+              <span class="stat-num">{{ stat.value }}</span>
+              <span class="stat-label">{{ t(stat.labelAr, stat.labelEn) }}</span>
+            </div>
+            <div v-if="i < heroStats.length - 1" class="stat-div" aria-hidden="true"></div>
+          </template>
         </div>
         <div class="hero-hotline">
           <AppIcon name="phone" :size="17" color="rgba(255,255,255,.75)" aria-hidden="true" />
@@ -64,29 +52,14 @@
         <p class="section-sub">{{ t('بسيط. مثالي. أسطوري.', 'Simple. Perfect. Legendary.') }}</p>
       </div>
       <div class="menu-grid" role="list">
-        <article class="menu-item featured" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🍲</div>
+        <article v-for="item in menuHighlights" :key="item.id"
+          class="menu-item" :class="{ featured: item.flags.isFeatured }" role="listitem">
+          <div class="menu-icon" aria-hidden="true">{{ item.image }}</div>
           <div class="menu-info">
-            <h3>{{ t('كشري', 'Koshary') }}</h3>
-            <p>{{ t('أرز وعدس ومكرونة مع صلصة الطماطم المتبلة والبصل المقلي والدقة الحارة. نباتي ١٠٠٪.', 'Rice, lentils & pasta layered with spiced tomato sauce, crispy fried onions & tangy daqqah. 100% vegan.') }}</p>
+            <h3>{{ t(item.name.ar, item.name.en) }}</h3>
+            <p>{{ t(item.description.ar, item.description.en) }}</p>
           </div>
-          <div class="menu-price">~65 {{ t('ج.م.', 'EGP') }}</div>
-        </article>
-        <article class="menu-item" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🥣</div>
-          <div class="menu-info">
-            <h3>{{ t('شوربة عدس', 'Lentil Soup') }}</h3>
-            <p>{{ t('شوربة العدس المصرية التقليدية، مطبوخة على نار هادئة حتى الكمال.', 'Traditional Egyptian lentil soup, slow-cooked to perfection.') }}</p>
-          </div>
-          <div class="menu-price">~60 {{ t('ج.م.', 'EGP') }}</div>
-        </article>
-        <article class="menu-item" role="listitem">
-          <div class="menu-icon" aria-hidden="true">🍮</div>
-          <div class="menu-info">
-            <h3>{{ t('رز بلبن', 'Rice Pudding') }}</h3>
-            <p>{{ t('رز بلبن مصري كلاسيكي — الخاتمة المثالية.', 'Classic Egyptian rice pudding — the perfect sweet finish.') }}</p>
-          </div>
-          <div class="menu-price">{{ t('سعر السوق', 'Market price') }}</div>
+          <div class="menu-price">{{ displayPrice(item) }}</div>
         </article>
       </div>
     </section>
@@ -290,6 +263,8 @@ import AppIcon from '../components/AppIcon.vue'
 import { useBranchStore } from '../stores/restaurantStore'
 import { usePageMeta } from '../composables/usePageMeta'
 import { useLanguage } from '../composables/useLanguage'
+import statsData from '../data/stats.json'
+import menuData from '../data/menu.json'
 
 usePageMeta({
   title: 'All Branches',
@@ -298,6 +273,18 @@ usePageMeta({
 
 const store        = useBranchStore()
 const { isAR, t }  = useLanguage()
+
+const heroStats      = statsData.hero
+const menuHighlights = menuData.slice(0, 3)
+
+function displayPrice(item) {
+  if (item.price === 'market') return t('سعر السوق', 'Market price')
+  if (item.sizes?.length) {
+    const min = Math.min(...item.sizes.map(s => s.price))
+    return `~${min} ${t('ج.م.', 'EGP')}`
+  }
+  return `~${item.price} ${t('ج.م.', 'EGP')}`
+}
 
 onMounted(() => {
   // Branches are automatically loaded from service into the store
