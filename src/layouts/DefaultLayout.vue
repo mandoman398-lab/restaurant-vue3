@@ -19,7 +19,6 @@
           <router-link to="/about" class="nav-link" active-class="nav-active">{{ t('من نحن', 'About') }}</router-link>
           <router-link to="/news" class="nav-link" active-class="nav-active">{{ t('الأخبار', 'News') }}</router-link>
           <router-link to="/contact" class="nav-link" active-class="nav-active">{{ t('تواصل معنا', 'Contact') }}</router-link>
-          <router-link v-if="auth.isAuthenticated" to="/add" class="nav-link" active-class="nav-active">{{ t('إضافة فرع', 'Add Branch') }}</router-link>
         </nav>
 
         <!-- End cluster -->
@@ -34,24 +33,6 @@
             :aria-label="dark ? t('الوضع الفاتح','Light mode') : t('الوضع الداكن','Dark mode')">
             <AppIcon :name="dark ? 'sun' : 'moon'" :size="17" color="rgba(255,255,255,.8)" />
           </button>
-
-          <!-- Auth -->
-          <div v-if="auth.isAuthenticated" class="user-menu" @click="menuOpen = !menuOpen"
-            ref="userMenuEl" role="button" :aria-expanded="menuOpen" aria-haspopup="true"
-            tabindex="0" @keydown.enter="menuOpen = !menuOpen" @keydown.escape="menuOpen = false">
-            <div class="avatar">{{ initial }}</div>
-            <AppIcon name="chevron-down" :size="13" color="rgba(255,255,255,.6)" />
-            <div class="dropdown" v-if="menuOpen" role="menu">
-              <button class="dropdown-item" role="menuitem" @click="doLogout">
-                <AppIcon name="log-out" :size="15" />
-                {{ t('تسجيل الخروج', 'Log out') }}
-              </button>
-            </div>
-          </div>
-          <router-link v-else to="/login" class="login-btn">
-            <AppIcon name="log-in" :size="16" />
-            <span>{{ t('دخول', 'Sign in') }}</span>
-          </router-link>
 
           <!-- Phone -->
           <a href="tel:16011" class="navbar-phone" aria-label="Hotline 16011">
@@ -142,42 +123,25 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
-import { useAuthStore } from '../stores/authStore'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useDarkMode } from '../composables/useDarkMode'
 import { useLanguage } from '../composables/useLanguage'
 import AppIcon from '../components/AppIcon.vue'
 
-const auth    = useAuthStore()
-const router  = useRouter()
 const { dark, toggle: toggleDark } = useDarkMode()
 const { isAR, toggle, t } = useLanguage()
 
-const menuOpen   = ref(false)
-const userMenuEl = ref(null)
-const scrolled   = ref(false)
-const initial    = computed(() => auth.userName?.charAt(0)?.toUpperCase() || '?')
+const scrolled = ref(false)
 
-function doLogout() {
-  auth.logout()
-  menuOpen.value = false
-  router.push({ name: 'Home' })
-}
-function handleClickOutside(e) {
-  if (userMenuEl.value && !userMenuEl.value.contains(e.target)) menuOpen.value = false
-}
 function handleScroll() {
   scrolled.value = window.scrollY > 50
 }
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
   window.addEventListener('scroll', handleScroll, { passive: true })
   handleScroll()
 })
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside)
   window.removeEventListener('scroll', handleScroll)
 })
 </script>

@@ -1,22 +1,22 @@
 <template>
   <div
     class="card card-hover branch-card"
-    @click="$router.push({ name: 'RestaurantDetail', params: { id: r.id } })"
+    @click="$router.push({ name: 'BranchDetail', params: { id: r.id } })"
     tabindex="0"
     role="article"
-    :aria-label="`${r.name} branch — click to view details`"
-    @keydown.enter="$router.push({ name: 'RestaurantDetail', params: { id: r.id } })"
+    :aria-label="`${r.name?.en || r.name} branch — click to view details`"
+    @keydown.enter="$router.push({ name: 'BranchDetail', params: { id: r.id } })"
   >
     <!-- Top row -->
     <div class="card-top">
-      <span class="badge" :class="r.isMainBranch ? 'badge-gold' : 'badge-primary'">
-        <AppIcon v-if="r.isMainBranch" name="star-fill" :size="11" aria-hidden="true" />
-        {{ r.isMainBranch ? 'Flagship' : r.area }}
+      <span class="badge" :class="r.flags?.isMainBranch ? 'badge-gold' : 'badge-primary'">
+        <AppIcon v-if="r.flags?.isMainBranch" name="star-fill" :size="11" aria-hidden="true" />
+        {{ r.flags?.isMainBranch ? 'Flagship' : r.location?.areaLabel?.en || r.location?.area }}
       </span>
       <button
         class="fav-btn"
-        @click.stop="store.toggleFavorite(String(r.id))"
-        :aria-label="isFav ? `Remove ${r.name} from saved` : `Save ${r.name}`"
+        @click.stop="toggleFavorite()"
+        :aria-label="isFav ? `Remove ${r.name?.en} from saved` : `Save ${r.name?.en}`"
         :aria-pressed="isFav"
       >
         <AppIcon :name="isFav ? 'heart-fill' : 'heart'" :size="18"
@@ -26,64 +26,45 @@
 
     <!-- Title -->
     <div class="card-body">
-      <h3 class="card-name">{{ r.name }}</h3>
-      <p class="card-desc" v-if="r.description">{{ r.description }}</p>
+      <h3 class="card-name">{{ r.name?.en }}</h3>
+      <p class="card-desc" v-if="r.description?.en">{{ r.description.en }}</p>
     </div>
 
     <!-- Details -->
     <ul class="detail-list">
       <li class="detail-item">
         <AppIcon name="map-pin" :size="15" color="var(--primary)" aria-hidden="true" />
-        <span>{{ r.address }}</span>
+        <span>{{ r.location?.address }}</span>
       </li>
       <li class="detail-item">
         <AppIcon name="phone" :size="15" color="var(--primary)" aria-hidden="true" />
-        <a :href="`tel:${r.contact}`" @click.stop class="phone-link">{{ r.contact }}</a>
+        <a :href="`tel:${r.contact?.phone}`" @click.stop class="phone-link">{{ r.contact?.phone }}</a>
       </li>
       <li class="detail-item">
         <AppIcon name="clock" :size="15" color="var(--text-muted)" aria-hidden="true" />
-        <span>{{ r.hours }}</span>
+        <span>{{ r.hours?.label?.en }}</span>
       </li>
-      <li v-if="r.delivery" class="detail-item delivery-item">
+      <li v-if="r.delivery?.available" class="detail-item delivery-item">
         <AppIcon name="truck" :size="15" color="var(--success)" aria-hidden="true" />
-        <span>Delivery · Hotline <strong>{{ r.hotline || '16011' }}</strong></span>
+        <span>Delivery · Hotline <strong>{{ r.contact?.hotline || '16011' }}</strong></span>
       </li>
     </ul>
-
-    <!-- Admin actions (authenticated only) -->
-    <div v-if="auth.isAuthenticated" class="card-actions" @click.stop>
-      <router-link
-        :to="{ name: 'Update', params: { id: r.id } }"
-        class="btn btn-secondary btn-sm"
-        :aria-label="`Edit ${r.name}`"
-      >
-        <AppIcon name="edit" :size="13" aria-hidden="true" />
-        Edit
-      </router-link>
-      <button
-        class="btn btn-danger btn-sm"
-        @click="$emit('delete', r)"
-        :aria-label="`Delete ${r.name}`"
-      >
-        <AppIcon name="trash" :size="13" aria-hidden="true" />
-        Delete
-      </button>
-    </div>
   </div>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import { useRestaurantStore } from '../stores/restaurantStore'
-import { useAuthStore } from '../stores/authStore'
+import { useBranchStore } from '../stores/restaurantStore'
 import AppIcon from './AppIcon.vue'
 
 const props = defineProps({ r: Object })
-defineEmits(['delete'])
 
-const store = useRestaurantStore()
-const auth  = useAuthStore()
-const isFav = computed(() => store.isFavorite(String(props.r.id)))
+const store = useBranchStore()
+const isFav = computed(() => store.isFavorite(props.r.id))
+
+function toggleFavorite() {
+  store.toggleFavorite(props.r.id)
+}
 </script>
 
 <style scoped>
@@ -123,8 +104,4 @@ const isFav = computed(() => store.isFavorite(String(props.r.id)))
 .delivery-item strong { color: var(--success); }
 .phone-link { color: var(--primary); font-weight: 600; }
 .phone-link:hover { text-decoration: underline; }
-
-/* Actions */
-.card-actions { display: flex; gap: var(--sp-2); }
-.card-actions .btn { flex: 1; }
 </style>

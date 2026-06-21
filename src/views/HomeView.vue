@@ -282,14 +282,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import RestaurantCard from '../components/RestaurantCard.vue'
 import BranchSkeleton from '../components/BranchSkeleton.vue'
 import AppIcon from '../components/AppIcon.vue'
-import { useRestaurantStore } from '../stores/restaurantStore'
-import { useAuthStore } from '../stores/authStore'
-import { useToast } from '../composables/useToast'
+import { useBranchStore } from '../stores/restaurantStore'
 import { usePageMeta } from '../composables/usePageMeta'
 import { useLanguage } from '../composables/useLanguage'
 
@@ -298,23 +296,12 @@ usePageMeta({
   description: 'Find all Koshary Abou Tarek branch locations, addresses, phone numbers, and opening hours.'
 })
 
-const store        = useRestaurantStore()
-const auth         = useAuthStore()
-const toast        = useToast()
+const store        = useBranchStore()
 const { isAR, t }  = useLanguage()
-const deleteTarget = ref(null)
 
-onMounted(() => store.fetchAll())
-
-function confirmDelete(r) { deleteTarget.value = r }
-
-async function doDelete() {
-  const name = deleteTarget.value.name
-  const ok   = await store.remove(deleteTarget.value.id)
-  deleteTarget.value = null
-  if (ok) toast.success(`"${name}" ${t('تم الحذف', 'removed')}`)
-  else    toast.error(t('فشل الحذف', 'Failed to delete branch'))
-}
+onMounted(() => {
+  // Branches are automatically loaded from service into the store
+})
 </script>
 
 <style scoped>

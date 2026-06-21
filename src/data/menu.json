@@ -1,0 +1,128 @@
+[
+  {
+    "id": "koshary-signature",
+    "category": "koshary",
+    "name": {
+      "ar": "كشري — الأصلي",
+      "en": "Koshary — Signature"
+    },
+    "description": {
+      "ar": "الطبق الأسطوري الأصلي: أرز، عدس بني، مكرونة، صلصة طماطم متبلة، بصل مقلي ذهبي، دقة حارة",
+      "en": "The iconic original: rice, brown lentils, pasta, spiced tomato sauce, crispy fried onions, tangy daqqah"
+    },
+    "ingredients": {
+      "ar": ["أرز", "عدس", "مكرونة", "صلصة طماطم", "بصل مقلي", "حمص", "دقة"],
+      "en": ["rice", "lentils", "pasta", "tomato sauce", "fried onions", "chickpeas", "daqqah"]
+    },
+    "sizes": [
+      { "size": "small", "label": { "ar": "صغير", "en": "Small" }, "price": 50 },
+      { "size": "medium", "label": { "ar": "وسط", "en": "Medium" }, "price": 60 },
+      { "size": "large", "label": { "ar": "كبير", "en": "Large" }, "price": 70 },
+      { "size": "jumbo", "label": { "ar": "جامبو", "en": "Jumbo" }, "price": 85 }
+    ],
+    "dietary": ["vegan", "vegetarian", "gluten-friendly"],
+    "customizations": [
+      { "id": "extra-sauce", "label": { "ar": "صلصة إضافية", "en": "Extra sauce" } },
+      { "id": "extra-onions", "label": { "ar": "بصل إضافي", "en": "Extra onions" } },
+      { "id": "extra-daqqah", "label": { "ar": "دقة إضافية", "en": "Extra daqqah" } }
+    ],
+    "image": "🍲",
+    "flags": {
+      "isFeatured": true,
+      "isAvailable": true,
+      "isVegan": true
+    }
+  },
+  {
+    "id": "lentil-soup",
+    "category": "soups",
+    "name": {
+      "ar": "شوربة عدس",
+      "en": "Lentil Soup"
+    },
+    "description": {
+      "ar": "شوربة عدس مصرية كلاسيكية ناعمة الملمس، مطبوخة على نار هادئة بالتوابل والليمون",
+      "en": "Velvety smooth Egyptian lentil soup seasoned with cumin & lemon. A perfect warm-up before your koshary."
+    },
+    "ingredients": {
+      "ar": ["عدس", "ماء", "بصل", "كمون", "ليمون"],
+      "en": ["lentils", "water", "onion", "cumin", "lemon"]
+    },
+    "price": 60,
+    "dietary": ["vegan", "vegetarian"],
+    "image": "🥣",
+    "flags": {
+      "isFeatured": false,
+      "isAvailable": true,
+      "isVegan": true
+    }
+  },
+  {
+    "id": "rice-pudding",
+    "category": "desserts",
+    "name": {
+      "ar": "أرز باللبن",
+      "en": "Rice Pudding"
+    },
+    "description": {
+      "ar": "كريمة الرز المصري الكلاسيكي — الحلوى المثالية لإنهاء وجبتك",
+      "en": "Classic Om Ali–style Egyptian rice pudding. Warm, creamy & mildly sweet — the perfect complement to spicy koshary."
+    },
+    "ingredients": {
+      "ar": ["أرز", "لبن", "سكر", "فانيليا", "قرفة"],
+      "en": ["rice", "milk", "sugar", "vanilla", "cinnamon"]
+    },
+    "price": "market",
+    "dietary": ["vegetarian"],
+    "image": "🍮",
+    "flags": {
+      "isFeatured": false,
+      "isAvailable": true,
+      "isVegan": false
+    }
+  },
+  {
+    "id": "soft-drinks",
+    "category": "drinks",
+    "name": {
+      "ar": "مشروبات غازية",
+      "en": "Soft Drinks"
+    },
+    "description": {
+      "ar": "بيبسي، 7 أب، ميرندا وماء متوفرة في جميع الفروع",
+      "en": "Pepsi, 7Up, Mirinda & water available at all branches."
+    },
+    "options": {
+      "ar": ["بيبسي", "7 أب", "ميرندا"],
+      "en": ["Pepsi", "7Up", "Mirinda"]
+    },
+    "price": "market",
+    "dietary": [],
+    "image": "🥤",
+    "flags": {
+      "isFeatured": false,
+      "isAvailable": true,
+      "isVegan": true
+    }
+  },
+  {
+    "id": "water",
+    "category": "drinks",
+    "name": {
+      "ar": "مياه",
+      "en": "Water"
+    },
+    "description": {
+      "ar": "مياه عذبة بأحجام مختلفة",
+      "en": "Still water in various bottle sizes."
+    },
+    "image": "💧",
+    "price": "market",
+    "dietary": ["vegan"],
+    "flags": {
+      "isFeatured": false,
+      "isAvailable": true,
+      "isVegan": true
+    }
+  }
+]

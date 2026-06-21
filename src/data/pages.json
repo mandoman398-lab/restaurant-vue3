@@ -1,0 +1,112 @@
+{
+  "about": {
+    "title": {
+      "ar": "من نحن",
+      "en": "About Us"
+    },
+    "description": {
+      "ar": "إمبراطورية الكشري المصري منذ الخمسينيات",
+      "en": "Egypt's Koshary Empire Since the 1950s"
+    },
+    "content": {
+      "ar": "في الخمسينيات، انطلقت قصة كشري أبو طارق من عربة صغيرة في شوارع وسط القاهرة. بوصفة سرية وحب أصيل لإطعام الناس، نجح أبو طارق في تحويل أكلة شعبية بسيطة إلى تجربة لا تُنسى. اليوم، يستقبل المطعم الأسطوري من 4 طوابق الزوار يومياً من كل أنحاء العالم.",
+      "en": "In the 1950s, Koshary Abou Tarek's story began with a small cart on the streets of Downtown Cairo. With a secret recipe and a genuine love for feeding people, Abou Tarek transformed a simple folk dish into an unforgettable experience. Today, the legendary 4-story restaurant welcomes visitors daily from all over the world."
+    },
+    "highlights": [
+      {
+        "title": { "ar": "70+ سنة", "en": "70+ Years" },
+        "desc": { "ar": "من التميز والوصفة السرية", "en": "of Excellence & Secret Recipe" }
+      },
+      {
+        "title": { "ar": "6+ فروع", "en": "6+ Branches" },
+        "desc": { "ar": "في 3 دول عربية", "en": "in 3 Arab Countries" }
+      },
+      {
+        "title": { "ar": "4 طوابق", "en": "4 Floors" },
+        "desc": { "ar": "في قلب وسط البلد", "en": "in Heart of Downtown Cairo" }
+      },
+      {
+        "title": { "ar": "🏆 جينيس", "en": "🏆 Guinness" },
+        "desc": { "ar": "سجل عالمي", "en": "World Record" }
+      }
+    ]
+  },
+  "contact": {
+    "title": {
+      "ar": "تواصل معنا",
+      "en": "Contact Us"
+    },
+    "email": "info@aboutarek.com",
+    "phone": "+20 2 2577 5935",
+    "hotline": "16011",
+    "hotlineHours": {
+      "ar": "يومياً من 7 ص إلى 10 م",
+      "en": "Daily from 7 AM to 10 PM"
+    },
+    "socialMedia": {
+      "facebook": "https://facebook.com/aboutarek",
+      "instagram": "https://instagram.com/aboutarek",
+      "tiktok": "https://tiktok.com/@aboutarek"
+    },
+    "delivery": {
+      "ar": "اطلب على",
+      "en": "Order on",
+      "platforms": ["Talabat", "Elmenus"]
+    },
+    "message": {
+      "ar": "شكراً لك لزيارتك كشري أبو طارق. نحن مسرورون بخدمتك. في حالة أي استفسار، تواصل معنا على الأرقام أعلاه.",
+      "en": "Thank you for visiting Koshary Abou Tarek. We're delighted to serve you. For any inquiries, please contact us using the numbers above."
+    }
+  },
+  "daqqah": {
+    "title": {
+      "ar": "الدقة الأسطورية 🫙",
+      "en": "The Legendary Daqqah 🫙"
+    },
+    "description": {
+      "ar": "سلاح أبو طارق السري — صلصة خل مركز حامض مع الثوم، الكمون والكزبرة. تُضاف على الطاولة حسب الرغبة.",
+      "en": "Abou Tarek's secret weapon — a tangy, garlicky vinegar sauce made with distilled white vinegar, garlic, water, cumin & coriander. Applied at the table to taste."
+    },
+    "levels": [
+      {
+        "level": 0,
+        "label": { "ar": "بدون", "en": "Without" },
+        "desc": { "ar": "بدون دقة", "en": "No daqqah" }
+      },
+      {
+        "level": 1,
+        "label": { "ar": "عادي", "en": "Regular" },
+        "desc": { "ar": "كمية عادية", "en": "Normal amount" }
+      },
+      {
+        "level": 2,
+        "label": { "ar": "زيادة", "en": "Extra" },
+        "desc": { "ar": "كمية إضافية", "en": "Extra drizzle" }
+      },
+      {
+        "level": 3,
+        "label": { "ar": "🔥 حار جداً", "en": "🔥 Very Hot" },
+        "desc": { "ar": "للمحترفين فقط!", "en": "For experts only!" }
+      }
+    ],
+    "tip": {
+      "ar": "اطلب 'دقة في صحن' لتحكم في الكمية بنفسك",
+      "en": "Ask for 'daqqa fi sahn' (on the side) to control your pour"
+    }
+  },
+  "company": {
+    "name": "Koshary Abou Tarek",
+    "nameAr": "كشري أبو طارق",
+    "founded": 1950,
+    "taxId": "002-788-523",
+    "commercialReg": "92167",
+    "address": {
+      "ar": "16 شارع معروف، وسط البلد، القاهرة، مصر",
+      "en": "16 Maarouf St., Downtown Cairo, Egypt"
+    },
+    "copyright": {
+      "ar": "جميع حقوق النشر محفوظة © 2026 أبو طارق",
+      "en": "All Rights Reserved © 2026 Koshary Abou Tarek"
+    }
+  }
+}

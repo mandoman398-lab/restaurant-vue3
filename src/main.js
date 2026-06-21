@@ -2,6 +2,12 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router/index'
+import { seedStorageIfNeeded } from './data/seed'
+
+/**
+ * Initialize app with seed data
+ */
+seedStorageIfNeeded()
 
 const app = createApp(App)
 app.use(createPinia())

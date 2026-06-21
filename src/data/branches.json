@@ -1,0 +1,186 @@
+[
+  {
+    "id": "downtown",
+    "name": {
+      "ar": "الفرع الرئيسي — وسط البلد",
+      "en": "Downtown — Main Branch"
+    },
+    "area": "Downtown Cairo",
+    "address": {
+      "ar": "16 شارع معروف، تقاطع شارع شامبليون، بالقرب من المحكمة العليا، وسط القاهرة",
+      "en": "16 Maarouf St., Champollion St. Intersection, Near Supreme Court, Downtown Cairo"
+    },
+    "contact": "+20 2 2577 5935",
+    "hotline": "16011",
+    "hours": {
+      "open": "07:00",
+      "close": "00:00",
+      "ar": "7 ص - 12 ص (منتصف الليل)",
+      "en": "7:00 AM – 12:00 AM (midnight)"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "المطعم الأيقوني الأسطوري منذ الخمسينيات يستقبل الزوار في 4 طوابق في قلب وسط البلد. معروف عالميًا وسُجل في موسوعة جينيس وتصنيفات TasteAtlas.",
+      "en": "The iconic flagship restaurant serving Cairo since the 1950s. Listed in TasteAtlas top 100 most legendary restaurants worldwide and Guinness World Records."
+    },
+    "flags": {
+      "isMainBranch": true,
+      "isFeatured": true,
+      "isActive": true
+    },
+    "images": {
+      "hero": "/branch1.png",
+      "logo": "/nav-logo.png"
+    }
+  },
+  {
+    "id": "mokattam",
+    "name": {
+      "ar": "فرع المقطم",
+      "en": "Mokattam Branch"
+    },
+    "area": "Mokattam, Cairo",
+    "address": {
+      "ar": "الطريق 9، أمام مطعم جاد، المقطم، القاهرة",
+      "en": "Road 9, In Front of Gad Restaurant, Mokattam, Cairo"
+    },
+    "contact": "16011",
+    "hotline": "16011",
+    "hours": {
+      "open": "09:00",
+      "close": "23:00",
+      "ar": "9 ص - 11 م",
+      "en": "9:00 AM – 11:00 PM"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "خدمة مجتمع المقطم برسالة أبو طارق الأصلية والجودة التي جعلت الفرع الرئيسي أسطوريًا.",
+      "en": "Serving the Mokattam community with the same authentic recipe and quality that made the Downtown flagship legendary."
+    },
+    "flags": {
+      "isMainBranch": false,
+      "isFeatured": false,
+      "isActive": true
+    }
+  },
+  {
+    "id": "nasr-city",
+    "name": {
+      "ar": "فرع مدينة نصر",
+      "en": "Nasr City Branch"
+    },
+    "area": "Nasr City, Cairo",
+    "address": {
+      "ar": "شارع عمر بن الخطاب، سيتي ستارز مول، الطابق السادس، مدينة نصر، القاهرة",
+      "en": "Omar Ibn El Khattab St., Citystars Mall Phase 2, 6th Floor Food Court, Nasr City, Cairo"
+    },
+    "contact": "16011",
+    "hotline": "16011",
+    "hours": {
+      "open": "10:00",
+      "close": "23:00",
+      "ar": "10 ص - 11 م",
+      "en": "10:00 AM – 11:00 PM"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "موقع مميز داخل أحد أكبر المراكز التجارية في القاهرة — سيتي ستارز. يقدم الكشري الأصلي لأهل مدينة نصر والزوار.",
+      "en": "Located inside Citystars Mall — one of Cairo's premier shopping destinations, serving authentic koshary to Nasr City residents and shoppers."
+    },
+    "flags": {
+      "isMainBranch": false,
+      "isFeatured": false,
+      "isActive": true
+    }
+  },
+  {
+    "id": "new-cairo-first-mall",
+    "name": {
+      "ar": "فرع التجمع الخامس — فيرست مول",
+      "en": "New Cairo — First Mall Branch"
+    },
+    "area": "New Cairo",
+    "address": {
+      "ar": "قطعة 124، شارع البنوك، قطاع 1، داخل مول فيرست، الطابق الأرضي، التجمع الخامس",
+      "en": "Plot 124, El Bonouk St., Sector 1, Inside First Mall 124, Ground Floor, New Cairo"
+    },
+    "contact": "16011",
+    "hotline": "16011",
+    "hours": {
+      "open": "09:00",
+      "close": "23:00",
+      "ar": "9 ص - 11 م",
+      "en": "9:00 AM – 11:00 PM"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "نقل طعم وسط البلد الأسطوري إلى التجمع الخامس داخل أحد أكبر مراكز التسوق.",
+      "en": "Bringing the legendary Downtown taste to the New Cairo 5th Compound community inside First Mall."
+    },
+    "flags": {
+      "isMainBranch": false,
+      "isFeatured": false,
+      "isActive": true
+    }
+  },
+  {
+    "id": "new-cairo-banks-center",
+    "name": {
+      "ar": "فرع التجمع — مركز البنوك",
+      "en": "New Cairo — Banks Center Branch"
+    },
+    "area": "New Cairo",
+    "address": {
+      "ar": "شارع البنوك، خلف بنك الأهلي، التجمع الخامس",
+      "en": "Bank Companies Street, Behind El Ahly Bank, New Cairo"
+    },
+    "contact": "16464",
+    "hotline": "16464",
+    "hours": {
+      "open": "09:00",
+      "close": "23:45",
+      "ar": "9 ص - 11:45 م",
+      "en": "9:00 AM – 11:45 PM"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "موقع استراتيجي في منطقة البنوك والأعمال — مثالي لغداء سريع أو عشاء بعد يوم عمل.",
+      "en": "Conveniently located in the New Cairo banking and business district, perfect for a quick lunch or dinner."
+    },
+    "flags": {
+      "isMainBranch": false,
+      "isFeatured": false,
+      "isActive": true
+    }
+  },
+  {
+    "id": "sheikh-zayed",
+    "name": {
+      "ar": "فرع الشيخ زايد",
+      "en": "Sheikh Zayed Branch"
+    },
+    "area": "Sheikh Zayed / 6th of October, Giza",
+    "address": {
+      "ar": "محور 26 يوليو، مدينة صفوة، الشيخ زايد، 6 أكتوبر، الجيزة",
+      "en": "26th of July Spine, Safwa City, El Sheikh Zayed, 6th of October, Giza"
+    },
+    "contact": "16464",
+    "hotline": "16464",
+    "hours": {
+      "open": "09:00",
+      "close": "23:00",
+      "ar": "9 ص - 11 م",
+      "en": "9:00 AM – 11:00 PM"
+    },
+    "delivery": true,
+    "description": {
+      "ar": "خدمة مجتمع الشيخ زايد وأكتوبر برسالة كشري أبو طارق — الأكلة المصرية التي يعشقها الملايين.",
+      "en": "Serving the Sheikh Zayed and 6th of October community with Egypt's most beloved koshary experience."
+    },
+    "flags": {
+      "isMainBranch": false,
+      "isFeatured": false,
+      "isActive": true
+    }
+  }
+]

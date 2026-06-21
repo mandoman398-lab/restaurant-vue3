@@ -141,36 +141,24 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import DefaultLayout from '../layouts/DefaultLayout.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import AppIcon from '../components/AppIcon.vue'
-import { useRestaurantStore } from '../stores/restaurantStore'
-import { useAuthStore } from '../stores/authStore'
-import { useToast } from '../composables/useToast'
+import { useBranchStore } from '../stores/restaurantStore'
 
-const store  = useRestaurantStore()
-const auth   = useAuthStore()
-const route  = useRoute()
-const router = useRouter()
-const toast  = useToast()
+const store    = useBranchStore()
+const route    = useRoute()
 
-const loading    = ref(true)
-const restaurant = ref(null)
-const showDelete = ref(false)
+const loading = ref(true)
+const branch  = ref(null)
 
-const isFav = computed(() => store.isFavorite(String(route.params.id)))
+const isFav = computed(() => store.isFavorite(route.params.id))
 
-onMounted(async () => {
-  restaurant.value = await store.fetchById(route.params.id)
+onMounted(() => {
+  branch.value = store.getById(route.params.id)
   loading.value = false
 })
-
-async function doDelete() {
-  const ok = await store.remove(route.params.id)
-  if (ok) { toast.success('Branch deleted'); router.push({ name: 'Home' }) }
-  else     { toast.error('Failed to delete'); showDelete.value = false }
-}
 </script>
 
 <style scoped>
