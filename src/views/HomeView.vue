@@ -437,14 +437,7 @@ onMounted(() => {
 .pagination { display: flex; align-items: center; justify-content: center; gap: var(--sp-4); margin-top: var(--sp-6); }
 .page-info  { font-size: .9rem; color: var(--text-muted); font-weight: 600; }
 
-.empty-state {
-  text-align: center; padding: var(--sp-12) var(--sp-6);
-  display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
-  color: var(--text-muted);
-}
 .empty-icon { display: flex; justify-content: center; }
-.empty-state h3 { margin: 0; font-size: 1.2rem; color: var(--text); }
-.empty-state p  { margin: 0; }
 
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 500; padding: var(--sp-4); backdrop-filter: blur(4px); }
 .modal { background: var(--surface); border-radius: var(--r-2xl); padding: var(--sp-8); max-width: 380px; width: 100%; box-shadow: var(--shadow-lg); animation: modalIn .18s ease-out; }

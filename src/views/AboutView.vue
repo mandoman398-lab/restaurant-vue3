@@ -94,20 +94,6 @@ const values = valuesData
 </script>
 
 <style scoped>
-/* Hero */
-.page-hero {
-  background: var(--hero-gradient); padding: var(--sp-12) var(--sp-8);
-  text-align: center; position: relative; overflow: hidden;
-}
-.page-hero::before {
-  content:''; position:absolute; inset:0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E");
-}
-.page-hero-inner { position: relative; z-index: 1; }
-.page-eyebrow { font-size:.8rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:var(--sp-2); }
-.page-hero-title { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:#fff; margin:0 0 var(--sp-3); font-family:'Cairo',sans-serif; }
-.page-hero-sub { font-size:1rem; color:rgba(255,255,255,.72); margin:0; }
-
 /* ── About page hero ── */
 .about-page-hero {
   position: relative; overflow: hidden;
@@ -172,8 +158,6 @@ const values = valuesData
   box-shadow: 0 4px 12px rgba(245,166,35,.4);
 }
 
-/* Section titles */
-.section-eyebrow { display:inline-block; font-size:.75rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:.1em; background:var(--primary-light); padding:3px 12px; border-radius:var(--r-pill); margin-bottom:var(--sp-2); }
 .text-center { text-align:center; margin-bottom:var(--sp-8); }
 .text-center h2 { font-size:clamp(1.3rem,2.5vw,2rem); font-weight:900; color:var(--text); margin:var(--sp-2) 0 0; }
 

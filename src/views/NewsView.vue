@@ -9,7 +9,7 @@
     </section>
 
     <div class="news-body">
-      <div class="news-inner">
+      <div class="content-inner">
 
         <!-- Featured article -->
         <article class="news-featured">
@@ -59,15 +59,8 @@ const allNews = allNewsData.slice(1)
 </script>
 
 <style scoped>
-.page-hero { background:var(--hero-gradient); padding:var(--sp-12) var(--sp-8); text-align:center; position:relative; overflow:hidden; }
-.page-hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E"); }
-.page-hero-inner { position:relative; z-index:1; }
-.page-eyebrow { font-size:.8rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.1em; display:block; margin-bottom:var(--sp-2); }
-.page-hero-title { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; color:#fff; margin:0 0 var(--sp-3); font-family:'Cairo',sans-serif; }
-.page-hero-sub { font-size:1rem; color:rgba(255,255,255,.72); margin:0; }
-
-.news-body { background:var(--bg); }
-.news-inner { max-width:1100px; margin:0 auto; padding:var(--sp-10) var(--sp-8); }
+.page-hero { text-align: center; padding: var(--sp-12) var(--sp-8); }
+.news-body { background: var(--bg); }
 
 /* Featured */
 .news-featured {
@@ -95,5 +88,5 @@ const allNews = allNewsData.slice(1)
 .news-body-inner p  { font-size:.8rem; color:var(--text-muted); line-height:1.6; margin:0 0 var(--sp-3); }
 
 @media(max-width:900px){ .all-news-grid{grid-template-columns:1fr 1fr} .news-featured{grid-template-columns:1fr} .featured-thumb{min-height:160px} }
-@media(max-width:640px){ .news-inner{padding:var(--sp-6) var(--sp-4)} .all-news-grid{grid-template-columns:1fr} }
+@media(max-width:640px){ .all-news-grid{grid-template-columns:1fr} }
 </style>

@@ -10,20 +10,20 @@
 
           <!-- Nav pills -->
           <div class="sk-nav-pills">
-            <div class="sk-pill delay-05" style="width:64px"></div>
-            <div class="sk-pill delay-10" style="width:52px"></div>
-            <div class="sk-pill delay-15" style="width:60px"></div>
-            <div class="sk-pill delay-20" style="width:68px"></div>
-            <div class="sk-pill delay-25" style="width:72px"></div>
-            <div class="sk-pill delay-30" style="width:76px"></div>
+            <div class="sk-pill delay-05 sk-w-64"></div>
+            <div class="sk-pill delay-10 sk-w-52"></div>
+            <div class="sk-pill delay-15 sk-w-60"></div>
+            <div class="sk-pill delay-20 sk-w-68"></div>
+            <div class="sk-pill delay-25 sk-w-72"></div>
+            <div class="sk-pill delay-30 sk-w-76"></div>
           </div>
 
           <!-- End cluster -->
           <div class="sk-nb-end">
-            <div class="sk-btn-sm delay-12" style="width:40px"></div>
+            <div class="sk-btn-sm delay-12 sk-w-40"></div>
             <div class="sk-circle delay-18"></div>
-            <div class="sk-btn-sm delay-22" style="width:70px"></div>
-            <div class="sk-btn-sm delay-28" style="width:56px"></div>
+            <div class="sk-btn-sm delay-22 sk-w-70"></div>
+            <div class="sk-btn-sm delay-28 sk-w-56"></div>
           </div>
         </div>
       </div>
@@ -38,10 +38,10 @@
         <!-- Text block — end side -->
         <div class="sk-hero-text">
           <div class="sk-eyebrow delay-10"></div>
-          <div class="sk-headline sk-h1 delay-18" style="width:72%"></div>
-          <div class="sk-headline sk-h1 delay-22" style="width:50%"></div>
-          <div class="sk-line delay-30" style="width:90%"></div>
-          <div class="sk-line delay-36" style="width:70%"></div>
+          <div class="sk-headline sk-h1 delay-18 sk-w-72p"></div>
+          <div class="sk-headline sk-h1 delay-22 sk-w-50p"></div>
+          <div class="sk-line delay-30 sk-w-90p"></div>
+          <div class="sk-line delay-36 sk-w-70p"></div>
           <div class="sk-cta-row">
             <div class="sk-cta-btn delay-42"></div>
             <div class="sk-cta-ghost delay-48"></div>
@@ -89,11 +89,11 @@
           <div class="sk-achieve-img delay-55"></div>
           <div class="sk-achieve-text">
             <div class="sk-tag delay-58"></div>
-            <div class="sk-headline sk-h2 delay-62" style="width:90%"></div>
-            <div class="sk-headline sk-h2 delay-66" style="width:65%"></div>
+            <div class="sk-headline sk-h2 delay-62 sk-w-90p"></div>
+            <div class="sk-headline sk-h2 delay-66 sk-w-65p"></div>
             <div class="sk-line delay-70"></div>
-            <div class="sk-line delay-74" style="width:80%"></div>
-            <div class="sk-btn-sm delay-78" style="width:120px"></div>
+            <div class="sk-line delay-74 sk-w-80p"></div>
+            <div class="sk-btn-sm delay-78 sk-w-120"></div>
           </div>
         </div>
         <!-- Stats row -->
@@ -110,7 +110,7 @@
         <div class="sk-section-inner">
           <div class="sk-news-header">
             <div class="sk-section-title delay-85"></div>
-            <div class="sk-btn-sm delay-88" style="width:80px"></div>
+            <div class="sk-btn-sm delay-88 sk-w-80"></div>
           </div>
           <div class="sk-news-grid">
             <div v-for="i in 3" :key="i" class="sk-news-card" :style="{ animationDelay: (.90 + i * .08) + 's' }">
@@ -453,6 +453,18 @@ html[dir="rtl"] .sk-news-card::after {
   opacity: 0;
   transform: scale(1.015);
 }
+
+/* ══════════════════════════════════════════════
+   SKELETON WIDTH HELPERS
+   Static pixel / percentage widths for skeleton
+   elements — keeps template free of inline styles.
+══════════════════════════════════════════════ */
+.sk-w-40  { width:  40px; } .sk-w-52  { width:  52px; } .sk-w-56  { width:  56px; }
+.sk-w-60  { width:  60px; } .sk-w-64  { width:  64px; } .sk-w-68  { width:  68px; }
+.sk-w-70  { width:  70px; } .sk-w-72  { width:  72px; } .sk-w-76  { width:  76px; }
+.sk-w-80  { width:  80px; } .sk-w-120 { width: 120px; }
+.sk-w-50p { width:  50%; } .sk-w-65p { width:  65%; } .sk-w-70p { width:  70%; }
+.sk-w-72p { width:  72%; } .sk-w-80p { width:  80%; } .sk-w-90p { width:  90%; }
 
 /* ══════════════════════════════════════════════
    RESPONSIVE
