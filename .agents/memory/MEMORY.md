@@ -1,0 +1,2 @@
+- [Vue CLI ESLint script-setup](vue-cli-eslint-setup.md) — `vue/setup-compiler-macros: true` env needed for defineProps/defineEmits in Vue CLI projects
+- [Security-blocked npm packages](npm-security-overrides.md) — Vue CLI pulls in blocked packages; fix with overrides for shell-quote, form-data, sha.js, pbkdf2

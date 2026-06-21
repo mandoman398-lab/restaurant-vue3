@@ -1,138 +1,84 @@
 {
   "users": [
     {
-      "id": "d1f4",
-      "email": "issamelgamal4583@gmail.com",
-      "name": "issam",
-      "password": "iss@123"
-    },
-    {
-      "id": "b769",
-      "email": "mohamed165@gmail.com",
-      "password": "ads165",
-      "name": "mohamed"
-    },
-    {
-      "id": "1179",
-      "email": "ali31@gmail.com",
-      "password": "dasd",
-      "name": "ali"
-    },
-    {
-      "id": "aab3",
-      "email": "john@gmail.com",
-      "password": "2010",
-      "name": "john"
-    },
-    {
-      "id": "459c",
-      "email": "",
-      "password": "",
-      "name": ""
+      "id": "demo01",
+      "email": "admin@aboutarek.com",
+      "name": "Abou Tarek Admin",
+      "password": "admin123"
     }
   ],
   "restaurants": [
     {
-      "name": "توتا",
-      "contact": "01066129221",
-      "address": "القومية شارع المشير احمد اسماعيل",
-      "id": "1"
+      "id": "1",
+      "name": "Downtown — الفرع الرئيسي",
+      "area": "Downtown Cairo",
+      "address": "16 Maarouf St., Champollion St. Intersection, Near Supreme Court, Downtown Cairo",
+      "contact": "+20 2 2577 5935",
+      "hotline": "16011",
+      "hours": "7:00 AM – 12:00 AM (midnight)",
+      "delivery": true,
+      "isMainBranch": true,
+      "description": "The iconic 4-story flagship restaurant serving Cairo since the 1950s. Listed in TasteAtlas top 100 most legendary restaurants worldwide and Guinness World Records."
     },
     {
-      "name": "shawrma elreem",
-      "contact": "01225315151",
-      "address": "Kawmea zagazig",
-      "id": "2"
+      "id": "2",
+      "name": "Mokattam — المقطم",
+      "area": "Mokattam, Cairo",
+      "address": "Road 9, In Front of Gad Restaurant, Mokattam, Cairo",
+      "contact": "16011",
+      "hotline": "16011",
+      "hours": "9:00 AM – 11:00 PM",
+      "delivery": true,
+      "isMainBranch": false,
+      "description": "Serving the Mokattam community with the same authentic recipe and quality that made the Downtown flagship legendary."
     },
     {
-      "name": "nour elsham",
-      "contact": "05502335332",
-      "address": "kawmea zagazig",
-      "id": "3"
+      "id": "3",
+      "name": "Nasr City — مدينة نصر",
+      "area": "Nasr City, Cairo",
+      "address": "Omar Ibn El Khattab St., Citystars Mall Phase 2, 6th Floor Food Court, Nasr City, Cairo",
+      "contact": "16011",
+      "hotline": "16011",
+      "hours": "10:00 AM – 11:00 PM",
+      "delivery": true,
+      "isMainBranch": false,
+      "description": "Located inside Citystars Mall — one of Cairo's premier shopping destinations, serving authentic koshary to Nasr City residents and shoppers."
     },
     {
       "id": "4",
-      "name": "طأطأ",
-      "contact": "01022227797",
-      "address": "القوميه شارع المشير احمد اسماعيل"
+      "name": "New Cairo — التجمع الخامس (First Mall)",
+      "area": "New Cairo",
+      "address": "Plot 124, El Bonouk St., Sector 1, City Center, 5th Compound, Inside First Mall 124, Ground Floor, New Cairo",
+      "contact": "16011",
+      "hotline": "16011",
+      "hours": "9:00 AM – 11:00 PM",
+      "delivery": true,
+      "isMainBranch": false,
+      "description": "Bringing the legendary Downtown taste to the New Cairo 5th Compound community inside First Mall."
     },
     {
       "id": "5",
-      "name": "الدمياطي",
-      "contact": "0552307441",
-      "address": "القوميه جنب طأطأ"
+      "name": "New Cairo — التجمع (Banks Center)",
+      "area": "New Cairo",
+      "address": "Bank Companies Street, Behind El Ahly Bank, New Cairo",
+      "contact": "16464",
+      "hotline": "16464",
+      "hours": "9:00 AM – 11:45 PM",
+      "delivery": true,
+      "isMainBranch": false,
+      "description": "Conveniently located in the New Cairo banking and business district, perfect for a quick lunch or dinner."
     },
     {
       "id": "6",
-      "name": "كاسب",
-      "contact": "01226661753",
-      "address": "شارع فاروق"
-    },
-    {
-      "id": "7",
-      "name": "ماكسيم",
-      "contact": "0552353070",
-      "address": "الفوميه "
-    },
-    {
-      "id": "8",
-      "name": "فتتفت",
-      "contact": "0552324311",
-      "address": "شارع مولد النبي وسط البلد"
-    },
-    {
-      "id": "9",
-      "name": "السرايا",
-      "contact": "01210677771",
-      "address": "الفلل"
-    },
-    {
-      "id": "10",
-      "name": "اوكس برجر OX",
-      "contact": "15761",
-      "address": "القوميه"
-    },
-    {
-      "id": "11",
-      "name": "بازوكا",
-      "contact": "16455",
-      "address": "القوميه جنب بلبن وطأطأ"
-    },
-    {
-      "id": "12",
-      "name": "بلبن",
-      "contact": "15761",
-      "address": "شارع المشير احمد اسماعيل القوميه"
-    },
-    {
-      "id": "13",
-      "name": "بافلو برجر",
-      "contact": "19914",
-      "address": "الفلل خلف المبره"
-    },
-    {
-      "id": "14",
-      "name": "بيتزا اسكندرية",
-      "contact": "01011171712",
-      "address": "القوميه شارع طلبة عويضة"
-    },
-    {
-      "id": "15",
-      "name": "باراديز",
-      "contact": "0552385855",
-      "address": "وسط البلد فوق كنتاكي المقاطعة"
-    },
-    {
-      "id": "16",
-      "name": "كشري ابو سمره",
-      "contact": "01019331317",
-      "address": "الغشام"
-    },
-    {
-      "id": "17",
-      "name": "كبده السعيد",
-      "contact": "01147755444",
-      "address": "شارع البوسطه وسط البلد"
+      "name": "Sheikh Zayed — الشيخ زايد",
+      "area": "Sheikh Zayed / 6th of October, Giza",
+      "address": "26th of July Spine, Safwa City, El Sheikh Zayed, 6th of October, Giza",
+      "contact": "16464",
+      "hotline": "16464",
+      "hours": "9:00 AM – 11:00 PM",
+      "delivery": true,
+      "isMainBranch": false,
+      "description": "Serving the Sheikh Zayed and 6th of October community with Egypt's most beloved koshary experience."
     }
   ]
 }

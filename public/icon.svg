@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background circle -->
+  <rect width="512" height="512" rx="100" fill="#C8102E"/>
+  <!-- Bowl body -->
+  <ellipse cx="256" cy="290" rx="145" ry="40" fill="#fff" opacity="0.15"/>
+  <path d="M111 270 Q111 370 256 370 Q401 370 401 270 Z" fill="#fff"/>
+  <!-- Bowl rim -->
+  <ellipse cx="256" cy="270" rx="145" ry="22" fill="#f0d0c0"/>
+  <!-- Rice layer (white) -->
+  <ellipse cx="256" cy="262" rx="120" ry="16" fill="#fff8f0"/>
+  <!-- Pasta layer (tan) -->
+  <ellipse cx="256" cy="254" rx="100" ry="13" fill="#e8c890"/>
+  <!-- Lentil/tomato sauce (red-brown) -->
+  <ellipse cx="256" cy="247" rx="80" ry="10" fill="#c0401a"/>
+  <!-- Fried onions (golden) -->
+  <ellipse cx="256" cy="242" rx="55" ry="7" fill="#F5A623"/>
+  <!-- Steam lines -->
+  <path d="M220 215 Q225 200 218 188" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M256 210 Q261 193 254 180" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <path d="M292 215 Q297 200 290 188" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <!-- Arabic text: أبو طارق -->
+  <text x="256" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#F5A623">أبو طارق</text>
+  <!-- Stars decoration -->
+  <text x="150" y="430" text-anchor="middle" font-size="24" fill="#fff" opacity="0.5">★</text>
+  <text x="362" y="430" text-anchor="middle" font-size="24" fill="#fff" opacity="0.5">★</text>
+</svg>

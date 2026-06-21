@@ -1,0 +1,112 @@
+Full Prompt: Transform restaurant-vue3 into a Modern, Production-Ready Vue 3 Frontend App
+
+**Project**: https://github.com/Mostafa-SAID7/restaurant-vue3
+
+**Goal**: Turn this basic CRUD restaurant directory app into a **polished, fully-featured, modern frontend application** that looks and feels professional (suitable for portfolio or real use).
+
+---
+
+## Current State (Quick Summary)
+- Vue 3 (Options API mostly)
+- Vue Router
+- Axios + json-server (db.json)
+- Basic login with localStorage
+- Simple Home page with restaurant table + Add/Update forms
+- Basic styling
+
+---
+
+## Requirements: Make it a "Fully Frontend" App
+
+### 1. Project Setup & Modernization
+- Migrate to **Vite** if not already (preferred over Vue CLI).
+- Add **TypeScript** support.
+- Switch all new code to **Composition API** (`<script setup>` + `setup()` where needed).
+- Update dependencies (Vue 3.4+, Pinia, Vue Router 4, etc.).
+- Use environment variables (`VITE_API_BASE_URL`).
+
+### 2. State Management
+- Install and set up **Pinia**.
+- Create these stores:
+  - `authStore.ts` → user, token, login, logout, isAuthenticated, persist in localStorage.
+  - `restaurantStore.ts` → restaurants list, loading, error states, CRUD actions.
+  - Optional: `uiStore.ts` for theme, toasts, etc.
+
+### 3. Routing & Protection
+- Improve `routers.js` (rename to `router/index.ts`).
+- Add route meta: `{ requiresAuth: true }`.
+- Implement global navigation guard in `main.ts`.
+- Add:
+  - `/login`
+  - `/register` (optional)
+  - `/restaurants` (protected)
+  - `/restaurant/:id` (detail view)
+  - `/add-restaurant`
+  - `/edit-restaurant/:id`
+  - 404 page
+
+### 4. UI/UX & Styling
+**Choose one**:
+- **Option A (Recommended)**: Tailwind CSS + DaisyUI or Shadcn-Vue.
+- **Option B**: PrimeVue / Vuetify / Element Plus.
+
+**Must-have UI improvements**:
+- Modern, clean, responsive design (mobile-first).
+- Loading spinners and skeleton loaders.
+- Toast notifications (vue-toastification or Pinia + custom).
+- Form validation (VeeValidate or Zod + composables).
+- Search + filter + pagination on restaurant list.
+- Restaurant cards view (toggle between table and grid).
+- Dark mode support.
+
+### 5. New Features to Add
+- Restaurant detail page with better info display.
+- Image upload preview (for restaurant logo/image).
+- Menu items (expand data model in db.json if needed).
+- Favorites / Wishlist (saved in localStorage or Pinia).
+- User profile page.
+- Responsive sidebar navigation or top navbar with dropdown.
+- Better error handling and user feedback.
+
+### 6. Code Quality & Structure
+Use this folder structure:
+src/
+├── assets/
+├── components/          # UI components (Button, Card, Table, etc.)
+├── composables/         # useAuth, useApi, useToast, etc.
+├── layouts/             # DefaultLayout, AuthLayout
+├── pages/ or views/
+├── router/
+├── stores/              # Pinia stores
+├── services/            # api.ts
+├── utils/
+├── App.vue
+├── main.ts
+text- Extract API calls to services layer.
+- Proper error handling.
+- Add comments where needed.
+
+### 7. Polish & Extras
+- Update README.md with screenshots, tech stack, setup instructions, and live demo link (Vercel/Netlify).
+- Add basic Vitest tests for stores.
+- Ensure excellent mobile experience.
+
+---
+
+## Priority Order (Do in this sequence)
+
+1. Pinia + Auth Store + Route Guards
+2. Modern folder structure + Composition API migration
+3. UI Framework + Responsive Design
+4. Search/Filter + Restaurant Detail Page
+5. Polish + New Features
+
+---
+
+**Output Instructions for the Agent**:
+- Provide changes as **diffs** or full new files when possible.
+- Create the files in the correct locations.
+- After major changes, give a summary of what was done and next steps.
+- Keep the json-server / db.json backend compatible.
+
+Start working on this transformation now!

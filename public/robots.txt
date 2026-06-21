@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /add
+Disallow: /update/
+Disallow: /login
+Disallow: /sign-up
+
+Sitemap: https://koshary-aboutarek.com/sitemap.xml
