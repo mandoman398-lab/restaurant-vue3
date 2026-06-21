@@ -2,15 +2,18 @@
   <div class="app-shell">
     <header class="navbar">
       <div class="navbar-brand">
-        <span class="brand-icon">🍽️</span>
-        <span class="brand-name">RestaurantHub</span>
+        <div class="brand-logo">🍲</div>
+        <div class="brand-text">
+          <span class="brand-ar">كشري أبو طارق</span>
+          <span class="brand-en">Koshary Abou Tarek</span>
+        </div>
       </div>
       <nav class="navbar-links">
         <router-link to="/" class="nav-link">
-          <span class="nav-icon">🏠</span> Home
+          <span class="nav-icon">🏠</span> Branches
         </router-link>
         <router-link to="/add" class="nav-link">
-          <span class="nav-icon">➕</span> Add
+          <span class="nav-icon">➕</span> Add Branch
         </router-link>
       </nav>
       <div class="navbar-actions">
@@ -33,7 +36,15 @@
     </main>
 
     <footer class="app-footer">
-      <span>Created by <strong>Issam Mohamed</strong> © 2025</span>
+      <div class="footer-inner">
+        <div class="footer-brand">🍲 كشري أبو طارق — Koshary Abou Tarek</div>
+        <div class="footer-info">
+          <span>📞 Hotline: <strong>16011</strong></span>
+          <span>🛵 Delivery: 7AM – 10PM</span>
+          <span>🌍 Egypt · Saudi Arabia · UAE</span>
+        </div>
+        <div class="footer-copy">© 2025 Koshary Abou Tarek. All rights reserved.</div>
+      </div>
     </footer>
   </div>
 </template>
@@ -80,10 +91,9 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
   display: flex;
   align-items: center;
   padding: 0 24px;
-  height: 64px;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  height: 68px;
+  background: var(--primary);
+  box-shadow: 0 2px 12px rgba(200,16,46,.35);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -93,14 +103,36 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary);
+  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
-.brand-icon { font-size: 1.4rem; }
+.brand-logo {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.15);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  border: 1.5px solid rgba(255,255,255,.3);
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.brand-ar {
+  font-size: .95rem;
+  font-weight: 800;
+  color: #fff;
+  direction: rtl;
+  line-height: 1;
+}
+.brand-en {
+  font-size: .7rem;
+  color: rgba(255,255,255,.75);
+  letter-spacing: .03em;
+  line-height: 1;
+}
 
 .navbar-links {
   display: flex;
@@ -115,14 +147,14 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
   padding: 8px 14px;
   border-radius: 8px;
   text-decoration: none;
-  color: var(--text-muted);
+  color: rgba(255,255,255,.8);
   font-weight: 500;
   font-size: .9rem;
   transition: all .15s;
 }
 .nav-link:hover, .nav-link.router-link-exact-active {
-  background: var(--primary-light);
-  color: var(--primary);
+  background: rgba(255,255,255,.2);
+  color: #fff;
 }
 .nav-icon { font-size: .9rem; }
 
@@ -136,14 +168,14 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 .icon-btn {
   width: 38px; height: 38px;
   border: none;
-  background: var(--bg);
+  background: rgba(255,255,255,.15);
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.1rem;
   display: flex; align-items: center; justify-content: center;
   transition: background .15s;
 }
-.icon-btn:hover { background: var(--border); }
+.icon-btn:hover { background: rgba(255,255,255,.28); }
 
 .user-menu {
   display: flex;
@@ -156,18 +188,18 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
   transition: background .15s;
   user-select: none;
 }
-.user-menu:hover { background: var(--bg); }
+.user-menu:hover { background: rgba(255,255,255,.15); }
 
 .avatar {
   width: 34px; height: 34px;
-  background: var(--primary);
-  color: #fff;
+  background: var(--gold);
+  color: #1a0a0a;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: .9rem;
+  font-weight: 800; font-size: .9rem;
 }
-.username { font-weight: 600; font-size: .9rem; }
-.caret { font-size: .7rem; color: var(--text-muted); }
+.username { font-weight: 600; font-size: .9rem; color: #fff; }
+.caret { font-size: .7rem; color: rgba(255,255,255,.7); }
 
 .dropdown {
   position: absolute;
@@ -176,7 +208,7 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
   min-width: 140px;
   overflow: hidden;
   z-index: 200;
@@ -185,13 +217,14 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
   padding: 10px 16px;
   font-size: .9rem;
   cursor: pointer;
+  color: var(--text);
   transition: background .12s;
 }
 .dropdown-item:hover { background: var(--bg); }
 
 .main-content {
   flex: 1;
-  padding: 32px 24px;
+  padding: 0;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -199,18 +232,39 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 }
 
 .app-footer {
-  padding: 16px 24px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  text-align: center;
-  font-size: .85rem;
-  color: var(--text-muted);
+  background: #1a0a0a;
+  color: #c49898;
+  padding: 28px 24px;
+  margin-top: 48px;
 }
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-brand {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+}
+.footer-info {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: .85rem;
+}
+.footer-info strong { color: var(--gold); }
+.footer-copy { font-size: .78rem; opacity: .6; }
 
 @media (max-width: 640px) {
-  .navbar { padding: 0 16px; }
+  .navbar { padding: 0 14px; }
   .username { display: none; }
-  .main-content { padding: 16px; }
-  .brand-name { display: none; }
+  .brand-ar { font-size: .82rem; }
+  .brand-en { display: none; }
+  .footer-info { gap: 12px; font-size: .8rem; }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <AuthLayout>
     <h2 class="auth-title">Create an account 🚀</h2>
-    <p class="auth-sub">Start managing your restaurant listings</p>
+    <p class="auth-sub">Manage Koshary Abou Tarek branch listings</p>
 
     <form @submit.prevent="handleSignUp" class="auth-form">
       <div class="field">
@@ -67,7 +67,8 @@ async function handleSignUp() {
 .form-error { color: #ef4444; font-size: .85rem; margin: 0; }
 .btn-primary {
   padding: 12px; background: var(--primary); color: #fff; border: none; border-radius: 10px;
-  font-size: .95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity .15s;
+  font-size: .95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 8px; transition: opacity .15s;
 }
 .btn-primary:hover:not(:disabled) { opacity: .88; }
 .btn-primary:disabled { opacity: .6; cursor: not-allowed; }

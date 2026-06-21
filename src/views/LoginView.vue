@@ -1,7 +1,13 @@
 <template>
   <AuthLayout>
     <h2 class="auth-title">Welcome back 👋</h2>
-    <p class="auth-sub">Sign in to manage your restaurants</p>
+    <p class="auth-sub">Sign in to manage Koshary Abou Tarek branches</p>
+
+    <div class="demo-hint">
+      <span class="hint-label">Demo credentials</span>
+      <code>admin@aboutarek.com</code>
+      <code>admin123</code>
+    </div>
 
     <form @submit.prevent="handleLogin" class="auth-form">
       <div class="field">
@@ -50,7 +56,22 @@ async function handleLogin() {
 
 <style scoped>
 .auth-title { margin: 0 0 4px; font-size: 1.6rem; font-weight: 800; color: var(--text); }
-.auth-sub { margin: 0 0 28px; color: var(--text-muted); font-size: .9rem; }
+.auth-sub { margin: 0 0 20px; color: var(--text-muted); font-size: .9rem; }
+
+.demo-hint {
+  background: var(--gold-light);
+  border: 1px solid rgba(245,166,35,.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.hint-label { font-size: .75rem; font-weight: 700; color: #b37400; text-transform: uppercase; letter-spacing: .05em; flex-basis: 100%; }
+.demo-hint code { font-size: .82rem; background: rgba(245,166,35,.15); padding: 2px 8px; border-radius: 6px; color: #7a4f00; font-family: monospace; }
+
 .auth-form { display: flex; flex-direction: column; gap: 16px; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field label { font-size: .85rem; font-weight: 600; color: var(--text); }
@@ -62,7 +83,8 @@ async function handleLogin() {
 .form-error { color: #ef4444; font-size: .85rem; margin: 0; }
 .btn-primary {
   padding: 12px; background: var(--primary); color: #fff; border: none; border-radius: 10px;
-  font-size: .95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: opacity .15s;
+  font-size: .95rem; font-weight: 700; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; gap: 8px; transition: opacity .15s;
 }
 .btn-primary:hover:not(:disabled) { opacity: .88; }
 .btn-primary:disabled { opacity: .6; cursor: not-allowed; }

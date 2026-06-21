@@ -9,25 +9,31 @@ import AppToast from './components/AppToast.vue'
 
 <style>
 :root {
-  --primary: #4f46e5;
-  --primary-light: #eef2ff;
-  --bg: #f8fafc;
+  --primary: #C8102E;
+  --primary-dark: #a00d24;
+  --primary-light: #fff0f2;
+  --gold: #F5A623;
+  --gold-light: #fff8ec;
+  --bg: #f8f5f5;
   --surface: #ffffff;
-  --border: #e2e8f0;
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --skeleton: #e2e8f0;
+  --border: #ede0e0;
+  --text: #1a0a0a;
+  --text-muted: #7a5a5a;
+  --skeleton: #f0e0e0;
 }
 
 [data-theme="dark"] {
-  --primary: #818cf8;
-  --primary-light: #1e1b4b;
-  --bg: #0f172a;
-  --surface: #1e293b;
-  --border: #334155;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --skeleton: #334155;
+  --primary: #e84060;
+  --primary-dark: #ff6080;
+  --primary-light: #2d1015;
+  --gold: #F5A623;
+  --gold-light: #2d2210;
+  --bg: #120808;
+  --surface: #1e0e0e;
+  --border: #3d2020;
+  --text: #fdf0f0;
+  --text-muted: #c49898;
+  --skeleton: #3d2020;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -43,7 +49,6 @@ body {
 }
 
 a { color: inherit; }
-
 input, button, textarea, select { font-family: inherit; }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
