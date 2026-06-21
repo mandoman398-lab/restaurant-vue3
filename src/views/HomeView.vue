@@ -13,28 +13,44 @@
           <span class="hero-en en-display">Koshary Abou Tarek</span>
         </h1>
         <p class="hero-sub">
-          Egypt's most iconic koshary since the 1950s — born from a street cart,
-          now a legendary 4-story landmark in Downtown Cairo loved by millions.
+          {{ t(
+            'أشهر كشري في مصر منذ الخمسينيات — بدأ من عربة متجولة، وأصبح معلمًا أسطوريًا من 4 طوابق في وسط القاهرة يعشقه الملايين.',
+            'Egypt\'s most iconic koshary since the 1950s — born from a street cart, now a legendary 4-story landmark in Downtown Cairo loved by millions.'
+          ) }}
         </p>
         <div class="hero-stats" role="list" aria-label="Restaurant statistics">
-          <div class="stat" role="listitem"><span class="stat-num">1950s</span><span class="stat-label">Founded</span></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">1950s</span>
+            <span class="stat-label">{{ t('التأسيس', 'Founded') }}</span>
+          </div>
           <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem"><span class="stat-num">4</span><span class="stat-label">Floors</span></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">4</span>
+            <span class="stat-label">{{ t('طوابق', 'Floors') }}</span>
+          </div>
           <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem"><span class="stat-num">6+</span><span class="stat-label">Branches</span></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">{{ t('فروع', 'Branches') }}</span>
+          </div>
           <div class="stat-div" aria-hidden="true"></div>
-          <div class="stat" role="listitem"><span class="stat-num">3</span><span class="stat-label">Countries</span></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num">3</span>
+            <span class="stat-label">{{ t('دول', 'Countries') }}</span>
+          </div>
         </div>
         <div class="hero-hotline">
           <AppIcon name="phone" :size="17" color="rgba(255,255,255,.75)" aria-hidden="true" />
-          <span class="hotline-label">Order Delivery</span>
+          <span class="hotline-label">{{ t('اطلب التوصيل', 'Order Delivery') }}</span>
           <a class="hotline-num" href="tel:16011" aria-label="Call delivery hotline 16011">16011</a>
-          <span class="hotline-sub">Daily 7 AM – 10 PM</span>
+          <span class="hotline-sub">{{ t('يومياً ٧ ص – ١٠ م', 'Daily 7 AM – 10 PM') }}</span>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="dish-circle">🍲</div>
-        <div class="dish-label">Egypt's National<br>Street Food</div>
+        <div class="branch-img-wrap">
+          <img src="/branch1.png" alt="" class="branch-img" />
+        </div>
+        <div class="dish-label">{{ t('الأكلة الشعبية المصرية', 'Egypt\'s National Street Food') }}</div>
       </div>
     </section>
 
@@ -43,34 +59,34 @@
       <div class="section-header">
         <h2 id="menu-heading" class="section-title">
           <AppIcon name="utensils" :size="22" color="var(--primary)" aria-hidden="true" />
-          Our Menu
+          {{ t('قائمتنا', 'Our Menu') }}
         </h2>
-        <p class="section-sub">Simple. Perfect. Legendary.</p>
+        <p class="section-sub">{{ t('بسيط. مثالي. أسطوري.', 'Simple. Perfect. Legendary.') }}</p>
       </div>
       <div class="menu-grid" role="list">
         <article class="menu-item featured" role="listitem">
           <div class="menu-icon" aria-hidden="true">🍲</div>
           <div class="menu-info">
-            <h3>Koshary</h3>
-            <p>Rice, lentils &amp; pasta layered with spiced tomato sauce, crispy fried onions &amp; tangy daqqah. 100% vegan.</p>
+            <h3>{{ t('كشري', 'Koshary') }}</h3>
+            <p>{{ t('أرز وعدس ومكرونة مع صلصة الطماطم المتبلة والبصل المقلي والدقة الحارة. نباتي ١٠٠٪.', 'Rice, lentils & pasta layered with spiced tomato sauce, crispy fried onions & tangy daqqah. 100% vegan.') }}</p>
           </div>
-          <div class="menu-price">~65 EGP</div>
+          <div class="menu-price">~65 {{ t('ج.م.', 'EGP') }}</div>
         </article>
         <article class="menu-item" role="listitem">
           <div class="menu-icon" aria-hidden="true">🥣</div>
           <div class="menu-info">
-            <h3>Lentil Soup</h3>
-            <p>Traditional Egyptian lentil soup, slow-cooked to perfection.</p>
+            <h3>{{ t('شوربة عدس', 'Lentil Soup') }}</h3>
+            <p>{{ t('شوربة العدس المصرية التقليدية، مطبوخة على نار هادئة حتى الكمال.', 'Traditional Egyptian lentil soup, slow-cooked to perfection.') }}</p>
           </div>
-          <div class="menu-price">~60 EGP</div>
+          <div class="menu-price">~60 {{ t('ج.م.', 'EGP') }}</div>
         </article>
         <article class="menu-item" role="listitem">
           <div class="menu-icon" aria-hidden="true">🍮</div>
           <div class="menu-info">
-            <h3>Rice Pudding</h3>
-            <p>Classic Egyptian rice pudding — the perfect sweet finish.</p>
+            <h3>{{ t('رز بلبن', 'Rice Pudding') }}</h3>
+            <p>{{ t('رز بلبن مصري كلاسيكي — الخاتمة المثالية.', 'Classic Egyptian rice pudding — the perfect sweet finish.') }}</p>
           </div>
-          <div class="menu-price">Market price</div>
+          <div class="menu-price">{{ t('سعر السوق', 'Market price') }}</div>
         </article>
       </div>
     </section>
@@ -81,22 +97,22 @@
         <div>
           <h2 id="branches-heading" class="section-title">
             <AppIcon name="map-pin" :size="22" color="var(--primary)" aria-hidden="true" />
-            Our Branches
+            {{ t('فروعنا', 'Our Branches') }}
           </h2>
           <p class="section-sub" aria-live="polite">
-            {{ store.filtered.length }} branch{{ store.filtered.length !== 1 ? 'es' : '' }} found
+            {{ store.filtered.length }} {{ t('فرع', 'branch') }}{{ !isAR && store.filtered.length !== 1 ? 'es' : '' }} {{ t('متاح', 'found') }}
           </p>
         </div>
-        <router-link v-if="auth.isAuthenticated" to="/add" class="btn btn-primary" aria-label="Add a new branch">
+        <router-link v-if="auth.isAuthenticated" to="/add" class="btn btn-primary" :aria-label="t('إضافة فرع جديد', 'Add a new branch')">
           <AppIcon name="plus" :size="16" aria-hidden="true" />
-          Add Branch
+          {{ t('إضافة فرع', 'Add Branch') }}
         </router-link>
       </div>
 
       <!-- Toolbar -->
       <div class="toolbar" role="search">
         <div class="search-wrap">
-          <label for="branch-search" class="sr-only">Search branches</label>
+          <label for="branch-search" class="sr-only">{{ t('ابحث عن فروع', 'Search branches') }}</label>
           <span class="search-icon-wrap" aria-hidden="true">
             <AppIcon name="search" :size="16" color="var(--text-muted)" />
           </span>
@@ -105,7 +121,7 @@
             v-model="store.searchQuery"
             class="search-input"
             type="search"
-            placeholder="Search by name, area, address…"
+            :placeholder="t('ابحث بالاسم أو المنطقة أو العنوان…', 'Search by name, area, address…')"
             @input="store.currentPage = 1"
             autocomplete="off"
           />
@@ -113,17 +129,17 @@
             v-if="store.searchQuery"
             class="clear-btn icon-btn"
             @click="store.searchQuery = ''; store.currentPage = 1"
-            aria-label="Clear search"
+            :aria-label="t('مسح البحث', 'Clear search')"
           >
             <AppIcon name="x" :size="15" aria-hidden="true" />
           </button>
         </div>
-        <div class="view-toggle" role="group" aria-label="View mode">
+        <div class="view-toggle" role="group" :aria-label="t('وضع العرض', 'View mode')">
           <button
             :class="['toggle-btn', store.viewMode === 'grid' && 'active']"
             @click="store.setViewMode('grid')"
             :aria-pressed="store.viewMode === 'grid'"
-            aria-label="Card view"
+            :aria-label="t('عرض البطاقات', 'Card view')"
           >
             <AppIcon name="grid" :size="17" aria-hidden="true" />
           </button>
@@ -131,7 +147,7 @@
             :class="['toggle-btn', store.viewMode === 'table' && 'active']"
             @click="store.setViewMode('table')"
             :aria-pressed="store.viewMode === 'table'"
-            aria-label="Table view"
+            :aria-label="t('عرض الجدول', 'Table view')"
           >
             <AppIcon name="list" :size="17" aria-hidden="true" />
           </button>
@@ -145,11 +161,11 @@
       <template v-else-if="store.restaurants.length === 0">
         <div class="empty-state" role="status">
           <div class="empty-icon" aria-hidden="true">🍲</div>
-          <h3>No branches yet</h3>
-          <p>{{ auth.isAuthenticated ? 'Add the first branch to get started.' : 'No branch data available yet.' }}</p>
+          <h3>{{ t('لا توجد فروع بعد', 'No branches yet') }}</h3>
+          <p>{{ auth.isAuthenticated ? t('أضف أول فرع للبدء.', 'Add the first branch to get started.') : t('لا توجد بيانات فروع حتى الآن.', 'No branch data available yet.') }}</p>
           <router-link v-if="auth.isAuthenticated" to="/add" class="btn btn-primary">
             <AppIcon name="plus" :size="15" aria-hidden="true" />
-            Add Branch
+            {{ t('إضافة فرع', 'Add Branch') }}
           </router-link>
         </div>
       </template>
@@ -158,15 +174,15 @@
       <template v-else-if="store.filtered.length === 0">
         <div class="empty-state" role="status" aria-live="polite">
           <AppIcon name="search" :size="44" color="var(--border)" aria-hidden="true" />
-          <h3>No results for "{{ store.searchQuery }}"</h3>
-          <p>Try a different search term.</p>
-          <button class="btn btn-secondary" @click="store.searchQuery = ''">Clear search</button>
+          <h3>{{ t('لا نتائج لـ', 'No results for') }} "{{ store.searchQuery }}"</h3>
+          <p>{{ t('جرّب مصطلح بحث مختلف.', 'Try a different search term.') }}</p>
+          <button class="btn btn-secondary" @click="store.searchQuery = ''">{{ t('مسح البحث', 'Clear search') }}</button>
         </div>
       </template>
 
       <template v-else>
         <!-- Grid view -->
-        <div v-if="store.viewMode === 'grid'" class="branches-grid" role="list" aria-label="Branch cards">
+        <div v-if="store.viewMode === 'grid'" class="branches-grid" role="list" :aria-label="t('بطاقات الفروع', 'Branch cards')">
           <div role="listitem" v-for="r in store.paginated" :key="r.id">
             <RestaurantCard :r="r" @delete="confirmDelete" />
           </div>
@@ -174,27 +190,27 @@
 
         <!-- Table view -->
         <div v-else class="table-wrap">
-          <table class="table" role="table" aria-label="Branches table">
+          <table class="table" role="table" :aria-label="t('جدول الفروع', 'Branches table')">
             <thead>
               <tr>
-                <th scope="col">Branch</th>
-                <th scope="col">Area</th>
-                <th scope="col">Contact</th>
-                <th scope="col">Hours</th>
-                <th scope="col"><span class="sr-only">Saved</span></th>
-                <th v-if="auth.isAuthenticated" scope="col">Actions</th>
+                <th scope="col">{{ t('الفرع', 'Branch') }}</th>
+                <th scope="col">{{ t('المنطقة', 'Area') }}</th>
+                <th scope="col">{{ t('التواصل', 'Contact') }}</th>
+                <th scope="col">{{ t('ساعات العمل', 'Hours') }}</th>
+                <th scope="col"><span class="sr-only">{{ t('محفوظ', 'Saved') }}</span></th>
+                <th v-if="auth.isAuthenticated" scope="col">{{ t('الإجراءات', 'Actions') }}</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="r in store.paginated" :key="r.id">
                 <td>
                   <div class="table-name">
-                    <button class="name-btn" @click="$router.push({ name: 'RestaurantDetail', params: { id: r.id } })" :aria-label="`View details for ${r.name}`">
+                    <button class="name-btn" @click="$router.push({ name: 'RestaurantDetail', params: { id: r.id } })" :aria-label="`${t('عرض تفاصيل', 'View details for')} ${r.name}`">
                       {{ r.name }}
                     </button>
                     <span v-if="r.isMainBranch" class="badge badge-gold">
                       <AppIcon name="star-fill" :size="10" aria-hidden="true" />
-                      Flagship
+                      {{ t('الفرع الرئيسي', 'Flagship') }}
                     </span>
                   </div>
                 </td>
@@ -205,7 +221,7 @@
                   <button
                     class="fav-inline icon-btn"
                     @click="store.toggleFavorite(String(r.id))"
-                    :aria-label="store.isFavorite(String(r.id)) ? `Remove ${r.name} from saved` : `Save ${r.name}`"
+                    :aria-label="store.isFavorite(String(r.id)) ? `${t('إزالة', 'Remove')} ${r.name} ${t('من المحفوظات', 'from saved')}` : `${t('حفظ', 'Save')} ${r.name}`"
                     :aria-pressed="store.isFavorite(String(r.id))"
                   >
                     <AppIcon
@@ -217,13 +233,13 @@
                   </button>
                 </td>
                 <td v-if="auth.isAuthenticated" class="actions-cell">
-                  <router-link :to="{ name: 'Update', params: { id: r.id } }" class="link-btn" :aria-label="`Edit ${r.name}`">
+                  <router-link :to="{ name: 'Update', params: { id: r.id } }" class="link-btn" :aria-label="`${t('تعديل', 'Edit')} ${r.name}`">
                     <AppIcon name="edit" :size="13" aria-hidden="true" />
-                    Edit
+                    {{ t('تعديل', 'Edit') }}
                   </router-link>
-                  <button class="del-btn" @click="confirmDelete(r)" :aria-label="`Delete ${r.name}`">
+                  <button class="del-btn" @click="confirmDelete(r)" :aria-label="`${t('حذف', 'Delete')} ${r.name}`">
                     <AppIcon name="trash" :size="13" aria-hidden="true" />
-                    Delete
+                    {{ t('حذف', 'Delete') }}
                   </button>
                 </td>
               </tr>
@@ -232,15 +248,15 @@
         </div>
 
         <!-- Pagination -->
-        <nav v-if="store.totalPages > 1" class="pagination" aria-label="Branches pagination">
-          <button class="btn btn-secondary btn-sm" :disabled="store.currentPage <= 1" @click="store.currentPage--" aria-label="Previous page">
-            <AppIcon name="chevron-left" :size="15" aria-hidden="true" />
-            Prev
+        <nav v-if="store.totalPages > 1" class="pagination" :aria-label="t('ترقيم الصفحات', 'Branches pagination')">
+          <button class="btn btn-secondary btn-sm" :disabled="store.currentPage <= 1" @click="store.currentPage--" :aria-label="t('الصفحة السابقة', 'Previous page')">
+            <AppIcon :name="isAR ? 'chevron-right' : 'chevron-left'" :size="15" aria-hidden="true" />
+            {{ t('السابق', 'Prev') }}
           </button>
           <span class="page-info" aria-live="polite">{{ store.currentPage }} / {{ store.totalPages }}</span>
-          <button class="btn btn-secondary btn-sm" :disabled="store.currentPage >= store.totalPages" @click="store.currentPage++" aria-label="Next page">
-            Next
-            <AppIcon name="chevron-right" :size="15" aria-hidden="true" />
+          <button class="btn btn-secondary btn-sm" :disabled="store.currentPage >= store.totalPages" @click="store.currentPage++" :aria-label="t('الصفحة التالية', 'Next page')">
+            {{ t('التالي', 'Next') }}
+            <AppIcon :name="isAR ? 'chevron-left' : 'chevron-right'" :size="15" aria-hidden="true" />
           </button>
         </nav>
       </template>
@@ -248,15 +264,15 @@
 
     <!-- ── Delete Modal ── -->
     <Teleport to="body">
-      <div v-if="deleteTarget" class="modal-overlay" @click.self="deleteTarget = null" role="dialog" aria-modal="true" :aria-label="`Confirm deletion of ${deleteTarget.name}`">
+      <div v-if="deleteTarget" class="modal-overlay" @click.self="deleteTarget = null" role="dialog" aria-modal="true" :aria-label="`${t('تأكيد حذف', 'Confirm deletion of')} ${deleteTarget.name}`">
         <div class="modal">
-          <h3>Delete Branch?</h3>
-          <p>Remove <strong>{{ deleteTarget.name }}</strong>? This cannot be undone.</p>
+          <h3>{{ t('حذف الفرع؟', 'Delete Branch?') }}</h3>
+          <p>{{ t('حذف', 'Remove') }} <strong>{{ deleteTarget.name }}</strong>{{ t('؟ لا يمكن التراجع عن هذا الإجراء.', '? This cannot be undone.') }}</p>
           <div class="modal-actions">
-            <button class="btn btn-secondary" @click="deleteTarget = null" autofocus>Cancel</button>
+            <button class="btn btn-secondary" @click="deleteTarget = null" autofocus>{{ t('إلغاء', 'Cancel') }}</button>
             <button class="btn btn-danger" style="background:var(--error);color:#fff" @click="doDelete">
               <AppIcon name="trash" :size="14" aria-hidden="true" />
-              Delete
+              {{ t('حذف', 'Delete') }}
             </button>
           </div>
         </div>
@@ -275,6 +291,7 @@ import { useRestaurantStore } from '../stores/restaurantStore'
 import { useAuthStore } from '../stores/authStore'
 import { useToast } from '../composables/useToast'
 import { usePageMeta } from '../composables/usePageMeta'
+import { useLanguage } from '../composables/useLanguage'
 
 usePageMeta({
   title: 'All Branches',
@@ -284,6 +301,7 @@ usePageMeta({
 const store        = useRestaurantStore()
 const auth         = useAuthStore()
 const toast        = useToast()
+const { isAR, t }  = useLanguage()
 const deleteTarget = ref(null)
 
 onMounted(() => store.fetchAll())
@@ -294,8 +312,8 @@ async function doDelete() {
   const name = deleteTarget.value.name
   const ok   = await store.remove(deleteTarget.value.id)
   deleteTarget.value = null
-  if (ok) toast.success(`"${name}" removed`)
-  else    toast.error('Failed to delete branch')
+  if (ok) toast.success(`"${name}" ${t('تم الحذف', 'removed')}`)
+  else    toast.error(t('فشل الحذف', 'Failed to delete branch'))
 }
 </script>
 
@@ -316,7 +334,7 @@ async function doDelete() {
 .hero-content { flex: 1; max-width: 540px; position: relative; z-index: 1; }
 
 .hero-title  { margin: var(--sp-4) 0 var(--sp-3); display: flex; flex-direction: column; gap: var(--sp-1); }
-.hero-ar     { font-size: 2.5rem; font-weight: 900; color: #fff; line-height: 1.1; }
+.hero-ar     { font-size: 2.5rem; font-weight: 900; color: #fff; line-height: 1.1; font-family: 'Cairo', sans-serif; }
 .hero-en     { font-size: 1.05rem; color: rgba(255,255,255,.75); letter-spacing: .02em; }
 
 .hero-sub { color: rgba(255,255,255,.82); font-size: .9rem; line-height: 1.65; margin: 0 0 var(--sp-5); max-width: 480px; }
@@ -375,10 +393,9 @@ async function doDelete() {
 .branches-section { padding: var(--sp-8); }
 .branches-header  { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: var(--sp-5); gap: var(--sp-4); flex-wrap: wrap; }
 
-/* Toolbar */
 .toolbar       { display: flex; gap: var(--sp-3); margin-bottom: var(--sp-5); flex-wrap: wrap; align-items: center; }
 .search-wrap   { flex: 1; min-width: 200px; position: relative; display: flex; align-items: center; }
-.search-icon-wrap { position: absolute; left: var(--sp-3); pointer-events: none; display: flex; }
+.search-icon-wrap { position: absolute; inset-inline-start: var(--sp-3); pointer-events: none; display: flex; }
 .search-input {
   width: 100%; padding: 10px var(--sp-10) 10px 38px;
   border: 1.5px solid var(--border); border-radius: var(--r-lg);
@@ -386,7 +403,7 @@ async function doDelete() {
   transition: border-color .15s, box-shadow .15s; font-family: inherit;
 }
 .search-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-shadow); }
-.clear-btn { position: absolute; right: var(--sp-2); }
+.clear-btn { position: absolute; inset-inline-end: var(--sp-2); }
 
 .view-toggle { display: flex; gap: var(--sp-1); }
 .toggle-btn {
@@ -398,16 +415,13 @@ async function doDelete() {
 }
 .toggle-btn:hover { border-color: var(--primary); color: var(--primary); }
 .toggle-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-.toggle-btn:focus-visible { outline: 2px solid var(--gold); }
 
-/* Grid */
 .branches-grid { display: grid; grid-template-columns: var(--grid-cards); gap: var(--sp-5); }
 
-/* Table */
 .table-wrap { overflow-x: auto; border-radius: var(--r-xl); border: 1px solid var(--border); background: var(--surface); }
 .table { width: 100%; border-collapse: collapse; min-width: 580px; }
 .table th {
-  background: var(--bg); padding: var(--sp-3) var(--sp-4); text-align: left;
+  background: var(--bg); padding: var(--sp-3) var(--sp-4); text-align: start;
   font-size: .74rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .05em; color: var(--text-muted); border-bottom: 1px solid var(--border);
   white-space: nowrap;
@@ -420,16 +434,14 @@ async function doDelete() {
 .name-btn {
   cursor: pointer; font-weight: 700; color: var(--primary);
   background: none; border: none; padding: 0; font-size: inherit;
-  font-family: inherit; text-align: left;
+  font-family: inherit; text-align: start;
 }
 .name-btn:hover { text-decoration: underline; }
-.name-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 
 .area-cell  { color: var(--text-muted); font-size: .83rem; }
 .hours-cell { font-size: .83rem; white-space: nowrap; }
 .phone-link { color: var(--primary); font-weight: 600; }
 .phone-link:hover { text-decoration: underline; }
-
 .fav-inline { color: var(--text-muted); }
 
 .actions-cell { display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap; }
@@ -448,11 +460,9 @@ async function doDelete() {
 }
 .del-btn:hover { background: var(--error); color: #fff; }
 
-/* Pagination */
 .pagination { display: flex; align-items: center; justify-content: center; gap: var(--sp-4); margin-top: var(--sp-6); }
 .page-info  { font-size: .9rem; color: var(--text-muted); font-weight: 600; }
 
-/* Empty */
 .empty-state {
   text-align: center; padding: var(--sp-12) var(--sp-6);
   display: flex; flex-direction: column; align-items: center; gap: var(--sp-4);
@@ -462,7 +472,6 @@ async function doDelete() {
 .empty-state h3 { margin: 0; font-size: 1.2rem; color: var(--text); }
 .empty-state p  { margin: 0; }
 
-/* Modal */
 .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 500; padding: var(--sp-4); backdrop-filter: blur(4px); }
 .modal { background: var(--surface); border-radius: var(--r-2xl); padding: var(--sp-8); max-width: 380px; width: 100%; box-shadow: var(--shadow-lg); animation: modalIn .18s ease-out; }
 @keyframes modalIn { from { opacity: 0; transform: scale(.96) translateY(-6px); } to { opacity: 1; transform: none; } }
@@ -471,13 +480,10 @@ async function doDelete() {
 .modal-actions { display: flex; gap: var(--sp-3); justify-content: flex-end; }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .menu-grid { grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 860px) {
   .hero { padding: var(--sp-8) var(--sp-6); }
   .hero-visual { display: none; }
-  .menu-grid { grid-template-columns: 1fr 1fr; }
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .hero { padding: var(--sp-6) var(--sp-4); gap: var(--sp-4); }
