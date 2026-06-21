@@ -88,7 +88,21 @@ import AppToast from './components/AppToast.vue'
   /* ── Typography ── */
   --font-body:    'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-arabic:  'Cairo', 'Segoe UI', sans-serif;
-  --font-display: 'Dancing Script', 'Pacifico', cursive;
+  --font-display: 'Dancing Script', cursive;
+}
+
+/* ── RTL/LTR global ── */
+[dir="rtl"] body,
+[data-lang="ar"] body,
+body[data-lang="ar"] {
+  direction: rtl;
+  text-align: right;
+}
+[dir="ltr"] body,
+[data-lang="en"] body,
+body[data-lang="en"] {
+  direction: ltr;
+  text-align: left;
 }
 
 /* ── Dark mode ── */
@@ -122,6 +136,8 @@ import AppToast from './components/AppToast.vue'
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
+html[dir="rtl"] { direction: rtl; }
+html[dir="ltr"] { direction: ltr; }
 
 body {
   font-family: var(--font-body);

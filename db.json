@@ -9,16 +9,16 @@
   ],
   "restaurants": [
     {
-      "id": "1",
       "name": "Downtown — الفرع الرئيسي",
-      "area": "Downtown Cairo",
+      "area": "Downtown Cairo22",
       "address": "16 Maarouf St., Champollion St. Intersection, Near Supreme Court, Downtown Cairo",
       "contact": "+20 2 2577 5935",
       "hotline": "16011",
       "hours": "7:00 AM – 12:00 AM (midnight)",
+      "description": "The iconic 4-story flagship restaurant serving Cairo since the 1950s. Listed in TasteAtlas top 100 most legendary restaurants worldwide and Guinness World Records.",
       "delivery": true,
       "isMainBranch": true,
-      "description": "The iconic 4-story flagship restaurant serving Cairo since the 1950s. Listed in TasteAtlas top 100 most legendary restaurants worldwide and Guinness World Records."
+      "id": "1"
     },
     {
       "id": "2",
