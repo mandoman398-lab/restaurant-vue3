@@ -77,7 +77,7 @@
             {{ store.filtered.length }} branch{{ store.filtered.length !== 1 ? 'es' : '' }} found
           </p>
         </div>
-        <router-link to="/add" class="btn-add" aria-label="Add a new branch">➕ Add Branch</router-link>
+        <router-link v-if="auth.isAuthenticated" to="/add" class="btn-add" aria-label="Add a new branch">➕ Add Branch</router-link>
       </div>
 
       <!-- Toolbar -->
@@ -126,8 +126,9 @@
         <div class="empty-state" role="status">
           <div class="empty-icon" aria-hidden="true">🍲</div>
           <h3>No branches yet</h3>
-          <p>Add the first branch to get started.</p>
-          <router-link to="/add" class="btn-primary">Add Branch</router-link>
+          <p v-if="auth.isAuthenticated">Add the first branch to get started.</p>
+          <p v-else>No branch data available yet.</p>
+          <router-link v-if="auth.isAuthenticated" to="/add" class="btn-primary">Add Branch</router-link>
         </div>
       </template>
 
@@ -163,7 +164,7 @@
                 <th scope="col">Contact</th>
                 <th scope="col">Hours</th>
                 <th scope="col"><span class="sr-only">Favorite</span></th>
-                <th scope="col">Actions</th>
+                <th v-if="auth.isAuthenticated" scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -193,7 +194,7 @@
                     <span aria-hidden="true">{{ store.isFavorite(String(r.id)) ? '❤️' : '🤍' }}</span>
                   </button>
                 </td>
-                <td class="actions-cell">
+                <td v-if="auth.isAuthenticated" class="actions-cell">
                   <router-link
                     :to="{ name: 'Update', params: { id: r.id } }"
                     class="link-btn"
@@ -257,6 +258,7 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
 import RestaurantCard from '../components/RestaurantCard.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
 import { useRestaurantStore } from '../stores/restaurantStore'
+import { useAuthStore } from '../stores/authStore'
 import { useToast } from '../composables/useToast'
 import { usePageMeta } from '../composables/usePageMeta'
 
@@ -266,6 +268,7 @@ usePageMeta({
 })
 
 const store = useRestaurantStore()
+const auth = useAuthStore()
 const toast = useToast()
 const deleteTarget = ref(null)
 

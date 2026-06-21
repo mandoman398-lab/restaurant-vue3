@@ -25,6 +25,9 @@
       </button>
     </form>
 
+    <p class="auth-link">
+      <router-link to="/" class="subtle-link">← Back to branches</router-link>
+    </p>
     <p class="auth-link">Already have an account? <router-link to="/login">Sign in</router-link></p>
   </AuthLayout>
 </template>
@@ -80,4 +83,5 @@ async function handleSignUp() {
 .auth-link { margin-top: 20px; text-align: center; font-size: .9rem; color: var(--text-muted); }
 .auth-link a { color: var(--primary); font-weight: 600; text-decoration: none; }
 .auth-link a:hover { text-decoration: underline; }
+.subtle-link { color: var(--text-muted) !important; font-weight: 500 !important; font-size: .85rem; }
 </style>
