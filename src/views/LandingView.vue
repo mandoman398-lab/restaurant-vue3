@@ -3,8 +3,13 @@
 
     <!-- ══ HERO — full-screen cinematic ══ -->
     <section class="land-hero" aria-label="Hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg" :style="{ backgroundImage: `url('/hero-bg.webp')` }"></div>
       <div class="hero-overlay"></div>
+      <!-- Hero character — start side -->
+      <div class="hero-char" aria-hidden="true">
+        <img src="/hero-section.webp" alt="" class="hero-char-img" />
+      </div>
+
       <div class="hero-content" :class="{ 'fade-in': heroVisible }" ref="heroRef">
         <p class="hero-eyebrow">{{ t('مرحبا بكم في', 'Welcome to') }}</p>
         <h1 class="hero-headline">
@@ -32,6 +37,11 @@
         </div>
       </div>
     </section>
+
+    <!-- ══ SEPARATOR ══ -->
+    <div class="section-separator" aria-hidden="true">
+      <img src="/separator.png" alt="" class="separator-img" />
+    </div>
 
     <!-- ══ HISTORY / WHO WE ARE ══ -->
     <section class="history-section" id="history" aria-labelledby="history-heading">
@@ -224,17 +234,35 @@ const newsItems = [
   min-height: 100vh; display: flex;
   align-items: center; justify-content: center;
 }
+/* Hero character image — pinned to start-bottom corner */
+.hero-char {
+  position: absolute; bottom: 0;
+  inset-inline-start: clamp(20px, 6vw, 120px);
+  z-index: 2; pointer-events: none;
+  display: flex; align-items: flex-end;
+}
+.hero-char-img {
+  width: clamp(140px, 18vw, 280px);
+  height: auto; object-fit: contain;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,.6));
+  animation: charFloat 4s ease-in-out infinite;
+}
+@keyframes charFloat {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
 .hero-bg {
   position: absolute; inset: 0; z-index: 0;
-  background:
-    radial-gradient(ellipse at 60% 40%, rgba(139,9,32,.8) 0%, transparent 60%),
-    radial-gradient(ellipse at 20% 80%, rgba(20,5,5,.9) 0%, transparent 50%),
-    linear-gradient(160deg, #0a0202 0%, #1a0505 30%, #0d0203 70%, #000 100%);
+  background-size: cover; background-position: center;
+  background-repeat: no-repeat;
+  background-color: #100303;
 }
 .hero-bg::after {
   content: '';
   position: absolute; inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.02'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(139,9,32,.75) 0%, transparent 65%),
+    linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(10,2,2,.85) 100%);
 }
 .hero-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(0,0,0,.2); }
 
@@ -283,6 +311,11 @@ const newsItems = [
   text-decoration: none; transition: all .2s; backdrop-filter: blur(4px);
 }
 .btn-hero-ghost:hover { background: rgba(255,255,255,.18); border-color: rgba(255,255,255,.4); }
+
+/* Separator */
+.section-separator { text-align: center; padding: var(--sp-4) 0; background: var(--bg); overflow: hidden; }
+.separator-img { max-width: 360px; width: 60%; height: auto; opacity: .6; margin: 0 auto; mix-blend-mode: multiply; }
+[data-theme="dark"] .separator-img { mix-blend-mode: screen; opacity: .25; }
 
 /* Scroll hint */
 .scroll-hint {

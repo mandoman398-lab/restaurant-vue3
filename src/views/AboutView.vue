@@ -27,9 +27,9 @@
             ) }}</p>
           </div>
           <div class="about-visual">
-            <div class="about-img-placeholder">
-              <span class="about-emoji">🍲</span>
-              <span class="about-img-label">{{ t('منذ ١٩٥٠', 'Since 1950') }}</span>
+            <div class="about-img-wrap">
+              <img src="/branch1.png" alt="كشري أبو طارق" class="about-branch-img" />
+              <div class="about-badge">{{ t('منذ ١٩٥٠', 'Since 1950') }}</div>
             </div>
           </div>
         </div>
@@ -137,14 +137,25 @@ const values = [
 .about-text h2 { font-size:clamp(1.3rem,2.5vw,2rem); font-weight:900; color:var(--text); margin:var(--sp-2) 0 var(--sp-4); }
 .about-text p  { font-size:.9rem; color:var(--text-muted); line-height:1.8; margin:0 0 var(--sp-4); }
 .about-visual {}
-.about-img-placeholder {
-  aspect-ratio:1; background:linear-gradient(135deg,#1a0a0a,#3d1515);
-  border-radius:var(--r-2xl); display:flex; flex-direction:column;
-  align-items:center; justify-content:center; gap:var(--sp-3);
-  border:1px solid rgba(255,255,255,.06);
+.about-img-wrap {
+  position: relative; border-radius: var(--r-2xl); overflow: visible;
+  display: flex; justify-content: center;
 }
-.about-emoji { font-size:5rem; }
-.about-img-label { font-size:.85rem; color:rgba(255,255,255,.4); }
+.about-branch-img {
+  width: 100%; max-width: 340px;
+  height: auto; object-fit: contain;
+  border-radius: var(--r-2xl);
+  filter: drop-shadow(0 12px 32px rgba(0,0,0,.25));
+  transition: transform .3s;
+}
+.about-img-wrap:hover .about-branch-img { transform: translateY(-4px); }
+.about-badge {
+  position: absolute; bottom: var(--sp-4); inset-inline-end: var(--sp-4);
+  background: var(--gold); color: #1a0a0a;
+  padding: 6px 14px; border-radius: var(--r-xl);
+  font-size: .82rem; font-weight: 800;
+  box-shadow: 0 4px 12px rgba(245,166,35,.4);
+}
 
 /* Section titles */
 .section-eyebrow { display:inline-block; font-size:.75rem; font-weight:700; color:var(--primary); text-transform:uppercase; letter-spacing:.1em; background:var(--primary-light); padding:3px 12px; border-radius:var(--r-pill); margin-bottom:var(--sp-2); }

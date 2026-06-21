@@ -47,7 +47,9 @@
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="dish-circle">🍲</div>
+        <div class="branch-img-wrap">
+          <img src="/branch1.png" alt="" class="branch-img" />
+        </div>
         <div class="dish-label">{{ t('الأكلة الشعبية المصرية', 'Egypt\'s National Street Food') }}</div>
       </div>
     </section>

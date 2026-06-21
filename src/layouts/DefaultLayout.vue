@@ -8,7 +8,7 @@
 
         <!-- Logo — start side (right in AR, left in EN) -->
         <router-link to="/" class="navbar-logo" :aria-label="t('كشري أبو طارق – الرئيسية', 'Koshary Abou Tarek – Home')">
-          <img src="/apple-touch-icon.png" :alt="t('شعار كشري أبو طارق', 'Koshary Abou Tarek logo')" class="logo-img" />
+          <img src="/koshary-logo.png" :alt="t('شعار كشري أبو طارق', 'Koshary Abou Tarek logo')" class="logo-img" />
         </router-link>
 
         <!-- Centre nav links -->
@@ -102,7 +102,7 @@
 
         <!-- Logo -->
         <div class="footer-logo-wrap">
-          <img src="/apple-touch-icon.png" alt="Koshary Abou Tarek" class="footer-logo-img" />
+          <img src="/koshary-logo.png" alt="Koshary Abou Tarek" class="footer-logo-img" />
         </div>
 
         <!-- Columns -->
@@ -340,12 +340,12 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 /* Brand logo */
 .navbar-logo { display: flex; align-items: center; flex-shrink: 0; }
 .logo-img {
-  width: 48px; height: 48px; border-radius: var(--r-pill);
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,.15);
-  transition: border-color .15s;
+  width: 56px; height: 56px; border-radius: var(--r-xl);
+  object-fit: contain; object-position: center;
+  background: transparent;
+  transition: opacity .15s;
 }
-.navbar-logo:hover .logo-img { border-color: var(--gold); }
+.navbar-logo:hover .logo-img { opacity: .85; }
 
 /* ══ MAIN ══ */
 .main-content { flex: 1; width: 100%; max-width: var(--max-content); margin: 0 auto; }
@@ -373,9 +373,10 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 /* Logo */
 .footer-logo-wrap { display: flex; justify-content: center; }
 .footer-logo-img {
-  width: 80px; height: 80px; border-radius: var(--r-pill);
-  object-fit: cover; border: 2px solid rgba(255,255,255,.15);
-  filter: drop-shadow(0 0 20px rgba(245,166,35,.3));
+  width: 160px; height: auto;
+  object-fit: contain; object-position: center;
+  filter: drop-shadow(0 0 20px rgba(245,166,35,.25));
+  opacity: .92;
 }
 
 /* Columns */
